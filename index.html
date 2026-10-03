@@ -4,19 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta name="description"
+content="Edwin's Virtual Assistant Portfolio — Administrative Support, Data Entry, Inventory, Research and Operations.">
+
 <title>Edwin | Virtual Assistant Portfolio</title>
 
 <style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
 :root {
-    --bg: #f7f9fc;
-    --white: #ffffff;
-    --text: #172033;
+    --bg: #f8fafc;
+    --bg-secondary: #ffffff;
+    --card: rgba(255,255,255,0.72);
+    --text: #0f172a;
     --muted: #64748b;
     --blue: #2563eb;
-    --dark: #0f172a;
-    --light-blue: #eff6ff;
-    --border: #e5e7eb;
+    --blue-light: #60a5fa;
+    --blue-soft: #eff6ff;
+    --border: rgba(148,163,184,0.25);
+    --nav: rgba(255,255,255,0.75);
+    --dark: #020617;
+    --shadow: rgba(15,23,42,0.10);
 }
+
+[data-theme="dark"] {
+    --bg: #020617;
+    --bg-secondary: #0f172a;
+    --card: rgba(15,23,42,0.72);
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --blue: #60a5fa;
+    --blue-light: #93c5fd;
+    --blue-soft: rgba(37,99,235,0.12);
+    --border: rgba(148,163,184,0.18);
+    --nav: rgba(2,6,23,0.75);
+    --shadow: rgba(0,0,0,0.3);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     margin: 0;
@@ -29,37 +60,168 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
     background: var(--bg);
     color: var(--text);
+
     line-height: 1.6;
+
+    overflow-x: hidden;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
 }
 
-/* NAVIGATION */
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   MOUSE GLOW
+========================================================= */
+
+.cursor-glow {
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37,99,235,.13),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    z-index: -1;
+
+    transition:
+        left .15s ease,
+        top .15s ease;
+}
+
+
+/* =========================================================
+   BACKGROUND ORBS
+========================================================= */
+
+.bg-orb {
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: .18;
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+.orb-one {
+    background: #2563eb;
+    top: 5%;
+    left: -100px;
+
+    animation: floatOrb 12s ease-in-out infinite;
+}
+
+.orb-two {
+    background: #7c3aed;
+    right: -120px;
+    top: 50%;
+
+    animation: floatOrb 15s ease-in-out infinite reverse;
+}
+
+@keyframes floatOrb {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(70px);
+    }
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(255,255,255,0.95);
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(10px);
+
+    position: fixed;
+
+    top: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1100px, calc(100% - 30px));
+
+    z-index: 1000;
+
+    background: var(--nav);
+
+    backdrop-filter: blur(18px);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 40px var(--shadow);
+
 }
 
 .navbar {
-    max-width: 1100px;
-    height: 70px;
-    margin: auto;
-    padding: 0 20px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 68px;
+
+    padding:
+        0 20px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+
+    text-decoration: none;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
 }
 
 .logo span {
@@ -67,394 +229,1261 @@ nav {
 }
 
 .navlinks {
+
     display: flex;
-    gap: 25px;
+
+    gap: 5px;
+
 }
 
 .navlinks a {
+
+    position: relative;
+
     text-decoration: none;
-    color: #475569;
+
+    color: var(--muted);
+
     font-size: 14px;
+
     font-weight: 600;
+
+    padding: 10px 13px;
+
+    border-radius: 10px;
+
+    transition: .25s;
+
 }
 
-.navlinks a:hover {
+.navlinks a:hover,
+.navlinks a.active {
+
     color: var(--blue);
+
+    background:
+        var(--blue-soft);
+
 }
 
-/* HERO */
+.nav-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+.theme-toggle,
+.menu-toggle {
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    color: var(--text);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
-    padding: 100px 20px;
-    background: linear-gradient(
-        135deg,
-        #eff6ff 0%,
-        #ffffff 55%,
-        #f8fafc 100%
-    );
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        150px 20px 90px;
+
+    position: relative;
+
 }
 
 .hero-grid {
-    max-width: 1100px;
+
+    width: min(1100px, 100%);
+
     margin: auto;
 
     display: grid;
-    grid-template-columns: 1.4fr 0.8fr;
-    gap: 60px;
+
+    grid-template-columns:
+        1.35fr .8fr;
+
+    gap: 70px;
+
     align-items: center;
+
 }
 
 .badge {
-    display: inline-block;
-    background: #dbeafe;
-    color: #1d4ed8;
-    padding: 7px 14px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background:
+        var(--blue-soft);
+
+    border:
+        1px solid var(--border);
+
+    color: var(--blue);
+
+    padding:
+        8px 14px;
+
     border-radius: 50px;
 
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 12px;
 
-    margin-bottom: 20px;
+    font-weight: 800;
+
+    letter-spacing: .7px;
+
+    margin-bottom: 22px;
+
 }
 
-h1 {
-    font-size: clamp(45px, 6vw, 70px);
-    line-height: 1.05;
-    letter-spacing: -2px;
-    margin-bottom: 25px;
-}
+.badge::before {
 
-h1 span {
-    color: var(--blue);
-}
+    content: "";
 
-.hero p {
-    color: var(--muted);
-    font-size: 18px;
-    max-width: 650px;
-}
+    width: 8px;
+    height: 8px;
 
-.buttons {
-    display: flex;
-    gap: 12px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 13px 22px;
-
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-
-    border: 1px solid var(--border);
-}
-
-.btn-primary {
-    background: var(--blue);
-    color: white;
-    border-color: var(--blue);
-}
-
-.btn-primary:hover {
-    background: #1d4ed8;
-}
-
-.btn-secondary {
-    background: white;
-    color: var(--text);
-}
-
-/* PROFILE CARD */
-
-.profile-card {
-    background: white;
-    border: 1px solid var(--border);
-
-    border-radius: 24px;
-    padding: 30px;
-
-    box-shadow: 0 20px 50px rgba(15,23,42,0.08);
-}
-
-.avatar {
-    width: 100px;
-    height: 100px;
+    background: #22c55e;
 
     border-radius: 50%;
 
-    background: linear-gradient(
-        135deg,
-        #2563eb,
-        #60a5fa
-    );
+    box-shadow:
+        0 0 0 5px rgba(34,197,94,.12);
+
+    animation:
+        pulse 2s infinite;
+
+}
+
+@keyframes pulse {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+}
+
+.hero h1 {
+
+    font-size:
+        clamp(48px, 7vw, 78px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    max-width: 800px;
+
+    margin-bottom: 25px;
+
+}
+
+.gradient-text {
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #2563eb
+        );
+
+    background-size: 200% auto;
+
+    color: transparent;
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    animation:
+        gradientMove 4s linear infinite;
+
+}
+
+@keyframes gradientMove {
+
+    to {
+        background-position:
+            200% center;
+    }
+
+}
+
+.hero-description {
+
+    color: var(--muted);
+
+    font-size: 18px;
+
+    max-width: 680px;
+
+}
+
+.buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 32px;
+
+    flex-wrap: wrap;
+
+}
+
+.btn {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        13px 21px;
+
+    border-radius: 11px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    border:
+        1px solid var(--border);
+
+    overflow: hidden;
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
+
+}
+
+.btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px var(--shadow);
+
+}
+
+.btn-primary {
 
     color: white;
 
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    border: none;
+
+}
+
+.btn-secondary {
+
+    background:
+        var(--card);
+
+    color:
+        var(--text);
+
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-wrapper {
+
+    perspective:
+        1000px;
+
+}
+
+.profile-card {
+
+    position: relative;
+
+    padding: 30px;
+
+    border-radius: 28px;
+
+    background:
+        var(--card);
+
+    backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 30px 70px var(--shadow);
+
+    transform-style:
+        preserve-3d;
+
+    transition:
+        transform .2s ease;
+
+    animation:
+        cardFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes cardFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+.profile-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -1px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,.35),
+            transparent 50%,
+            rgba(124,58,237,.3)
+        );
+
+    z-index: -1;
+
+    opacity: .5;
+
+}
+
+.avatar {
+
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
     display: grid;
+
     place-items: center;
 
-    font-size: 35px;
-    font-weight: bold;
+    color: white;
+
+    font-size: 38px;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 15px 40px rgba(37,99,235,.3);
 
     margin-bottom: 20px;
+
 }
 
 .profile-card h3 {
-    font-size: 23px;
+
+    font-size: 25px;
+
 }
 
-.profile-card p {
+.profile-card > p {
+
     color: var(--muted);
+
     font-size: 14px;
+
 }
 
 .info {
-    margin-top: 20px;
+
+    margin-top: 22px;
+
 }
 
 .info div {
+
     display: flex;
-    justify-content: space-between;
 
-    padding: 10px 0;
+    justify-content:
+        space-between;
 
-    border-bottom: 1px solid var(--border);
+    gap: 15px;
 
-    font-size: 14px;
+    padding: 11px 0;
+
+    border-bottom:
+        1px solid var(--border);
+
+    font-size: 13px;
+
 }
 
 .info span {
     color: var(--muted);
 }
 
-/* SECTIONS */
+
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 section {
-    padding: 90px 20px;
+
+    padding:
+        110px 20px;
+
 }
 
 .container {
-    max-width: 1100px;
+
+    width:
+        min(1100px, 100%);
+
     margin: auto;
+
 }
 
 .section-head {
-    margin-bottom: 40px;
+
+    margin-bottom: 45px;
+
 }
 
 .eyebrow {
+
     color: var(--blue);
-    font-size: 13px;
-    font-weight: bold;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+
+    letter-spacing: 2px;
+
 }
 
 h2 {
-    font-size: 38px;
-    margin-top: 5px;
+
+    font-size:
+        clamp(34px, 5vw, 48px);
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+
+    margin-top: 7px;
+
 }
 
 .section-head p {
+
     color: var(--muted);
+
     max-width: 700px;
-    margin-top: 10px;
+
+    margin-top: 12px;
+
 }
 
-/* ABOUT */
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+}
 
 .about-text {
-    max-width: 850px;
+
     color: var(--muted);
+
+    font-size: 16px;
+
 }
 
 .skills {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px;
+
+}
+
+.skill-item {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 13px;
+
+    padding: 15px;
+
+    transition: .25s;
+
+}
+
+.skill-item:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(37,99,235,.35);
+
+}
+
+.skill-top {
+
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
 
-    margin-top: 25px;
+    justify-content:
+        space-between;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 9px;
+
 }
 
-.skill {
-    background: var(--light-blue);
-    color: #1d4ed8;
-
-    padding: 9px 14px;
-
-    border-radius: 8px;
-
-    font-size: 14px;
-    font-weight: 600;
+.skill-top span {
+    color: var(--muted);
 }
 
-/* SERVICES */
+.skill-bar {
+
+    height: 6px;
+
+    border-radius: 10px;
+
+    background:
+        var(--border);
+
+    overflow: hidden;
+
+}
+
+.skill-fill {
+
+    height: 100%;
+
+    width: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    transition:
+        width 1.5s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
 
 .services-section {
-    background: white;
+
+    background:
+        var(--bg-secondary);
+
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap: 20px;
+
 }
 
 .card {
-    background: white;
 
-    border: 1px solid var(--border);
-    border-radius: 18px;
+    position: relative;
 
-    padding: 25px;
-
-    transition: 0.25s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(15,23,42,0.08);
-}
-
-.icon {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    margin-bottom: 8px;
-}
-
-.card p {
-    color: var(--muted);
-    font-size: 14px;
-}
-
-/* EXPERIENCE */
-
-.experience {
-    display: grid;
-
-    grid-template-columns: 180px 1fr;
-
-    gap: 30px;
-
-    padding: 30px 0;
-
-    border-top: 1px solid var(--border);
-}
-
-.experience:first-of-type {
-    border-top: none;
-}
-
-.date {
-    color: var(--muted);
-    font-size: 14px;
-}
-
-.experience h3 {
-    font-size: 21px;
-}
-
-.experience p {
-    color: var(--muted);
-    margin-top: 8px;
-}
-
-/* PROJECTS */
-
-.projects-section {
-    background: white;
-}
-
-.project {
-    background: var(--dark);
-    color: white;
+    padding: 28px;
 
     border-radius: 20px;
 
-    padding: 30px;
+    background:
+        var(--card);
 
-    min-height: 230px;
+    border:
+        1px solid var(--border);
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
 }
 
-.project p {
-    color: #cbd5e1;
-    margin-top: 10px;
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37,99,235,.12);
+
+    filter: blur(25px);
+
+    top: -70px;
+    right: -70px;
+
+    transition: .3s;
+
+}
+
+.card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 25px 50px var(--shadow);
+
+    border-color:
+        rgba(37,99,235,.35);
+
+}
+
+.card:hover::after {
+
+    transform:
+        scale(1.8);
+
+}
+
+.icon {
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 14px;
+
+    background:
+        var(--blue-soft);
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+
+}
+
+.card h3 {
+
+    margin-bottom: 8px;
+
+    font-size: 19px;
+
+}
+
+.card p {
+
+    color:
+        var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.timeline {
+
+    position: relative;
+
+}
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8px;
+
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+        var(--border);
+
+}
+
+.experience {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        180px 1fr;
+
+    gap: 30px;
+
+    padding:
+        0 0 45px 40px;
+
+}
+
+.experience::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 2px;
+
+    top: 4px;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background:
+        var(--blue);
+
+    box-shadow:
+        0 0 0 5px var(--blue-soft);
+
+}
+
+.date {
+
+    color: var(--blue);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+}
+
+.experience h3 {
+
+    font-size: 21px;
+
+}
+
+.experience p {
+
+    color:
+        var(--muted);
+
+    margin-top: 8px;
+
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-section {
+
+    background:
+        var(--bg-secondary);
+
+}
+
+.project {
+
+    position: relative;
+
+    min-height: 260px;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    color: white;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f172a,
+            #111827
+        );
+
+    transition:
+        transform .35s ease;
+
+}
+
+.project::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37,99,235,.25);
+
+    filter: blur(70px);
+
+    right: -80px;
+    bottom: -100px;
+
+}
+
+.project:hover {
+
+    transform:
+        translateY(-10px)
+        rotateX(2deg);
+
+}
+
+.project-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
 }
 
 .project-tag {
-    color: #93c5fd;
+
+    color:
+        #93c5fd;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom: 9px;
+
+}
+
+.project h3 {
+
+    font-size: 21px;
+
+}
+
+.project p {
+
+    color:
+        #cbd5e1;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+}
+
+.project-tools {
+
+    margin-top: 25px;
+
+    color:
+        #93c5fd;
 
     font-size: 12px;
-    font-weight: bold;
 
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 700;
 
-    margin-bottom: 8px;
 }
 
-/* CONTACT */
+
+/* =========================================================
+   CONTACT
+========================================================= */
 
 .contact {
-    background: var(--dark);
-    color: white;
-}
 
-.contact p {
-    color: #cbd5e1;
-    max-width: 650px;
-    margin-top: 10px;
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(37,99,235,.35),
+            transparent 35%
+        ),
+        #020617;
+
 }
 
 .contact-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    gap: 30px;
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap: 40px;
+
 }
 
-/* FOOTER */
+.contact h2 {
+
+    margin-top: 5px;
+
+}
+
+.contact p {
+
+    color:
+        #cbd5e1;
+
+    max-width: 650px;
+
+    margin-top: 12px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
-    background: #020617;
-    color: #94a3b8;
 
-    text-align: center;
+    background:
+        #01030a;
 
-    padding: 25px;
+    color:
+        #64748b;
+
+    text-align:
+        center;
+
+    padding:
+        25px;
 
     font-size: 13px;
+
 }
 
-/* MOBILE */
 
-@media (max-width: 800px) {
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.back-top {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    backdrop-filter: blur(10px);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(15px);
+
+    transition: .3s;
+
+    z-index: 500;
+
+}
+
+.back-top.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    nav {
+        top: 10px;
+    }
+
+    .navlinks {
+
+        position: absolute;
+
+        top: 75px;
+
+        left: 0;
+        right: 0;
+
+        padding: 12px;
+
+        display:
+            none;
+
+        flex-direction:
+            column;
+
+        background:
+            var(--nav);
+
+        backdrop-filter:
+            blur(20px);
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            15px;
+
+    }
+
+    .navlinks.open {
+        display: flex;
+    }
+
+    .navlinks a {
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        padding-top: 130px;
+    }
+
+    .hero-grid,
+    .about-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
 
     .hero-grid {
-        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .cards {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .skills {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    section {
+        padding:
+            80px 20px;
+    }
+
+    .hero h1 {
+
+        font-size: 49px;
+
+        letter-spacing:
+            -3px;
+
+    }
+
+    .hero-description {
+        font-size: 16px;
     }
 
     .cards {
         grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding-top: 70px;
-    }
-
-    .navlinks {
-        display: none;
     }
 
     .experience {
@@ -463,27 +1492,62 @@ footer {
     }
 
     .contact-box {
-        flex-direction: column;
-        align-items: flex-start;
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
     }
 
-    h1 {
-        font-size: 48px;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
 }
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
+
 </style>
 </head>
 
 
 <body>
 
-<!-- =========================
+
+<!-- BACKGROUND -->
+
+<div class="cursor-glow"></div>
+
+<div class="bg-orb orb-one"></div>
+<div class="bg-orb orb-two"></div>
+
+
+<!-- =======================================================
      NAVIGATION
-========================= -->
+======================================================= -->
 
 <nav>
 
@@ -493,7 +1557,10 @@ footer {
             Edwin<span>.</span>
         </a>
 
-        <div class="navlinks">
+
+        <div class="navlinks" id="navLinks">
+
+            <a href="#home">Home</a>
 
             <a href="#about">About</a>
 
@@ -507,55 +1574,97 @@ footer {
 
         </div>
 
+
+        <div class="nav-actions">
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Toggle dark mode">
+
+                ☾
+
+            </button>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open menu">
+
+                ☰
+
+            </button>
+
+        </div>
+
     </div>
 
 </nav>
 
 
-<!-- =========================
+
+<!-- =======================================================
      HERO
-========================= -->
+======================================================= -->
 
 <header class="hero" id="home">
 
     <div class="hero-grid">
 
-        <div>
+
+        <div class="reveal">
+
 
             <div class="badge">
+
                 AVAILABLE FOR VA OPPORTUNITIES
+
             </div>
 
+
             <h1>
+
                 Reliable support for your
-                <span>business.</span>
+
+                <span class="gradient-text">
+                    business.
+                </span>
+
             </h1>
 
-            <p>
-                Hi, I'm Edwin — an administrative and warehouse
-                operations professional transitioning my hands-on
-                experience into Virtual Assistance.
+
+            <p class="hero-description">
+
+                Hi, I'm Edwin — an administrative and
+                warehouse operations professional
+                transitioning my hands-on experience
+                into Virtual Assistance.
+
+                <br><br>
+
+                I help businesses stay organized through
+                accurate data, documentation, inventory
+                support, research, and day-to-day
+                administrative tasks.
+
             </p>
 
-            <p style="margin-top:15px;">
-
-                I help businesses stay organized through accurate
-                data, documentation, inventory support, research,
-                and day-to-day administrative tasks.
-
-            </p>
 
             <div class="buttons">
 
-                <a href="#contact"
-                   class="btn btn-primary">
+                <a
+                    href="#contact"
+                    class="btn btn-primary">
 
-                    Let's Work Together
-
+                    Let's Work Together →
+                    
                 </a>
 
-                <a href="#projects"
-                   class="btn btn-secondary">
+
+                <a
+                    href="#projects"
+                    class="btn btn-secondary">
 
                     View My Work
 
@@ -563,63 +1672,111 @@ footer {
 
             </div>
 
-        </div>
-
-
-        <!-- PROFILE CARD -->
-
-        <div class="profile-card">
-
-            <div class="avatar">
-                E
-            </div>
-
-            <h3>
-                Edwin
-            </h3>
-
-            <p>
-                Virtual Assistant |
-                Admin Support |
-                Operations
-            </p>
-
-
-            <div class="info">
-
-                <div>
-                    <span>Based in</span>
-                    <strong>Philippines</strong>
-                </div>
-
-                <div>
-                    <span>Focus</span>
-                    <strong>Remote Support</strong>
-                </div>
-
-                <div>
-                    <span>Work Style</span>
-                    <strong>Accurate & Organized</strong>
-                </div>
-
-            </div>
 
         </div>
+
+
+        <!-- PROFILE -->
+
+        <div class="profile-wrapper reveal">
+
+
+            <div
+                class="profile-card"
+                id="profileCard">
+
+
+                <div class="avatar">
+
+                    E
+
+                </div>
+
+
+                <h3>
+
+                    Edwin
+
+                </h3>
+
+
+                <p>
+
+                    Virtual Assistant |
+                    Admin Support |
+                    Operations
+
+                </p>
+
+
+                <div class="info">
+
+
+                    <div>
+
+                        <span>
+                            Based in
+                        </span>
+
+                        <strong>
+                            Philippines
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Focus
+                        </span>
+
+                        <strong>
+                            Remote Support
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Work Style
+                        </span>
+
+                        <strong>
+                            Accurate & Organized
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
 
     </div>
 
 </header>
 
 
-<!-- =========================
+
+<!-- =======================================================
      ABOUT
-========================= -->
+======================================================= -->
 
 <section id="about">
 
+
     <div class="container">
 
-        <div class="section-head">
+
+        <div class="section-head reveal">
 
             <div class="eyebrow">
                 About Me
@@ -631,94 +1788,171 @@ footer {
             </h2>
 
             <p>
-                I bring real-world operations experience
-                into remote administrative work.
+                I bring real-world operations
+                experience into remote
+                administrative work.
             </p>
 
         </div>
 
 
-        <p class="about-text">
-
-            My experience in warehouse administration has trained
-            me to work with documents, inventory records,
-            spreadsheets, reports, receiving and delivery
-            coordination, item checking, and daily operational
-            concerns.
-
-            <br><br>
-
-            I understand how important accuracy, deadlines,
-            clear communication, and proper documentation are
-            to a business.
-
-            <br><br>
-
-            I am now applying these skills to Virtual Assistant
-            and remote administrative roles.
-
-        </p>
+        <div class="about-grid">
 
 
-        <div class="skills">
+            <div class="about-text reveal">
 
-            <span class="skill">
-                Data Entry
-            </span>
+                My experience in warehouse administration
+                has trained me to work with documents,
+                inventory records, spreadsheets, reports,
+                receiving and delivery coordination,
+                item checking, and daily operational
+                concerns.
 
-            <span class="skill">
-                Microsoft Excel
-            </span>
+                <br><br>
 
-            <span class="skill">
-                Google Workspace
-            </span>
+                I understand how important accuracy,
+                deadlines, clear communication, and
+                proper documentation are to a business.
 
-            <span class="skill">
-                Inventory Tracking
-            </span>
+                <br><br>
 
-            <span class="skill">
-                Reports & Documentation
-            </span>
+                I am now applying these skills to
+                Virtual Assistant and remote
+                administrative roles.
 
-            <span class="skill">
-                Web Research
-            </span>
+            </div>
 
-            <span class="skill">
-                Administrative Support
-            </span>
 
-            <span class="skill">
-                Email Support
-            </span>
+            <div class="skills reveal">
 
-            <span class="skill">
-                File Organization
-            </span>
 
-            <span class="skill">
-                Attention to Detail
-            </span>
+                <div class="skill-item">
+
+                    <div class="skill-top">
+                        <strong>Data Entry</strong>
+                        <span>95%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-fill"
+                            data-width="95%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item">
+
+                    <div class="skill-top">
+                        <strong>Microsoft Excel</strong>
+                        <span>90%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-fill"
+                            data-width="90%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item">
+
+                    <div class="skill-top">
+                        <strong>Documentation</strong>
+                        <span>95%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-fill"
+                            data-width="95%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item">
+
+                    <div class="skill-top">
+                        <strong>Inventory Support</strong>
+                        <span>95%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-fill"
+                            data-width="95%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item">
+
+                    <div class="skill-top">
+                        <strong>Web Research</strong>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-fill"
+                            data-width="85%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-item">
+
+                    <div class="skill-top">
+                        <strong>Communication</strong>
+                        <span>90%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-fill"
+                            data-width="90%">
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
 
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     SERVICES
-========================= -->
 
-<section id="services"
-         class="services-section">
+<!-- =======================================================
+     SERVICES
+======================================================= -->
+
+<section
+    id="services"
+    class="services-section">
+
 
     <div class="container">
 
-        <div class="section-head">
+
+        <div class="section-head reveal">
 
             <div class="eyebrow">
                 What I Can Do
@@ -734,7 +1968,7 @@ footer {
         <div class="cards">
 
 
-            <div class="card">
+            <div class="card reveal">
 
                 <div class="icon">
                     📊
@@ -754,7 +1988,7 @@ footer {
             </div>
 
 
-            <div class="card">
+            <div class="card reveal">
 
                 <div class="icon">
                     📁
@@ -773,7 +2007,7 @@ footer {
             </div>
 
 
-            <div class="card">
+            <div class="card reveal">
 
                 <div class="icon">
                     🔎
@@ -784,15 +2018,16 @@ footer {
                 </h3>
 
                 <p>
-                    Web research, product information gathering,
-                    comparing details, organizing findings,
-                    and preparing summaries.
+                    Web research, product information
+                    gathering, comparing details,
+                    organizing findings, and preparing
+                    summaries.
                 </p>
 
             </div>
 
 
-            <div class="card">
+            <div class="card reveal">
 
                 <div class="icon">
                     📦
@@ -812,7 +2047,7 @@ footer {
             </div>
 
 
-            <div class="card">
+            <div class="card reveal">
 
                 <div class="icon">
                     ✉️
@@ -824,15 +2059,15 @@ footer {
 
                 <p>
                     Professional messages, follow-ups,
-                    status updates, coordination,
-                    and clear communication with
-                    clients or teams.
+                    status updates, coordination, and
+                    clear communication with clients
+                    or teams.
                 </p>
 
             </div>
 
 
-            <div class="card">
+            <div class="card reveal">
 
                 <div class="icon">
                     🗂️
@@ -853,20 +2088,24 @@ footer {
 
         </div>
 
+
     </div>
 
 </section>
 
 
-<!-- =========================
+
+<!-- =======================================================
      EXPERIENCE
-========================= -->
+======================================================= -->
 
 <section id="experience">
 
+
     <div class="container">
 
-        <div class="section-head">
+
+        <div class="section-head reveal">
 
             <div class="eyebrow">
                 Background
@@ -879,75 +2118,94 @@ footer {
         </div>
 
 
-        <div class="experience">
+        <div class="timeline">
 
-            <div class="date">
-                Current Experience
+
+            <div class="experience reveal">
+
+
+                <div class="date">
+                    Current Experience
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Warehouse / Administrative Operations
+                    </h3>
+
+                    <p>
+
+                        Supporting warehouse operations
+                        through inventory documentation,
+                        stock checking, receiving and
+                        delivery coordination, discrepancy
+                        reporting, item labeling, record
+                        keeping, and daily administrative
+                        tasks.
+
+                    </p>
+
+                </div>
+
+
             </div>
 
-            <div>
 
-                <h3>
-                    Warehouse / Administrative Operations
-                </h3>
+            <div class="experience reveal">
 
-                <p>
 
-                    Supporting warehouse operations through
-                    inventory documentation, stock checking,
-                    receiving and delivery coordination,
-                    discrepancy reporting, item labeling,
-                    record keeping, and daily administrative
-                    tasks.
+                <div class="date">
+                    Transferable Skills
+                </div>
 
-                </p>
+
+                <div>
+
+                    <h3>
+                        Operations to Virtual Assistance
+                    </h3>
+
+                    <p>
+
+                        Hands-on operations experience
+                        developed strong attention to detail,
+                        deadline management, spreadsheet
+                        handling, communication, problem
+                        solving, and the ability to follow
+                        processes accurately.
+
+                    </p>
+
+                </div>
+
 
             </div>
+
 
         </div>
 
-
-        <div class="experience">
-
-            <div class="date">
-                Transferable Skills
-            </div>
-
-            <div>
-
-                <h3>
-                    Operations to Virtual Assistance
-                </h3>
-
-                <p>
-
-                    Hands-on operations experience developed
-                    strong attention to detail, deadline
-                    management, spreadsheet handling,
-                    communication, problem solving, and the
-                    ability to follow processes accurately.
-
-                </p>
-
-            </div>
-
-        </div>
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     PROJECTS
-========================= -->
 
-<section id="projects"
-         class="projects-section">
+<!-- =======================================================
+     PROJECTS
+======================================================= -->
+
+<section
+    id="projects"
+    class="projects-section">
+
 
     <div class="container">
 
-        <div class="section-head">
+
+        <div class="section-head reveal">
 
             <div class="eyebrow">
                 Sample Work
@@ -958,8 +2216,8 @@ footer {
             </h2>
 
             <p>
-                Replace these samples with screenshots
-                or links to your actual work.
+                Practical examples based on
+                administrative and operations work.
             </p>
 
         </div>
@@ -968,111 +2226,139 @@ footer {
         <div class="cards">
 
 
-            <div class="project">
+            <div class="project reveal">
 
-                <div>
+                <div class="project-content">
 
-                    <div class="project-tag">
-                        Spreadsheet
+
+                    <div>
+
+                        <div class="project-tag">
+                            Spreadsheet
+                        </div>
+
+                        <h3>
+                            Inventory Tracking Sheet
+                        </h3>
+
+                        <p>
+
+                            Organized stock information
+                            with item details, quantities,
+                            status tracking, and checking
+                            fields.
+
+                        </p>
+
                     </div>
 
-                    <h3>
-                        Inventory Tracking Sheet
-                    </h3>
 
-                    <p>
+                    <div class="project-tools">
+                        Excel / Google Sheets →
+                    </div>
 
-                        Organized stock information with
-                        item details, quantities, status
-                        tracking, and checking fields.
-
-                    </p>
 
                 </div>
-
-                <strong>
-                    Excel / Google Sheets
-                </strong>
 
             </div>
 
 
-            <div class="project">
+            <div class="project reveal">
 
-                <div>
+                <div class="project-content">
 
-                    <div class="project-tag">
-                        Documentation
+
+                    <div>
+
+                        <div class="project-tag">
+                            Documentation
+                        </div>
+
+                        <h3>
+                            Operations Report
+                        </h3>
+
+                        <p>
+
+                            Clear and structured reporting
+                            for receiving, delivery,
+                            discrepancies, and operational
+                            concerns.
+
+                        </p>
+
                     </div>
 
-                    <h3>
-                        Operations Report
-                    </h3>
 
-                    <p>
+                    <div class="project-tools">
+                        Word / Google Docs →
+                    </div>
 
-                        Clear and structured reporting
-                        for receiving, delivery,
-                        discrepancies, and operational
-                        concerns.
-
-                    </p>
 
                 </div>
-
-                <strong>
-                    Word / Google Docs
-                </strong>
 
             </div>
 
 
-            <div class="project">
+            <div class="project reveal">
 
-                <div>
+                <div class="project-content">
 
-                    <div class="project-tag">
-                        Research
+
+                    <div>
+
+                        <div class="project-tag">
+                            Research
+                        </div>
+
+                        <h3>
+                            Logistics Research
+                        </h3>
+
+                        <p>
+
+                            Collected and organized provider
+                            information, schedules, locations,
+                            rates, and service details.
+
+                        </p>
+
                     </div>
 
-                    <h3>
-                        Logistics Research
-                    </h3>
 
-                    <p>
+                    <div class="project-tools">
+                        Web Research →
+                    </div>
 
-                        Collected and organized provider
-                        information, schedules, locations,
-                        rates, and service details.
-
-                    </p>
 
                 </div>
-
-                <strong>
-                    Web Research
-                </strong>
 
             </div>
 
 
         </div>
 
+
     </div>
 
 </section>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
 
-<section id="contact"
-         class="contact">
+<!-- =======================================================
+     CONTACT
+======================================================= -->
+
+<section
+    id="contact"
+    class="contact">
+
 
     <div class="container">
 
-        <div class="contact-box">
+
+        <div class="contact-box reveal">
+
 
             <div>
 
@@ -1095,30 +2381,33 @@ footer {
             </div>
 
 
-            <!-- CHANGE YOUR EMAIL HERE -->
-
             <div>
+
+                <!-- CHANGE THIS EMAIL -->
 
                 <a
                     href="mailto:your.email@example.com"
                     class="btn btn-primary">
 
-                    Email Me
+                    Email Me →
 
                 </a>
 
             </div>
 
+
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================
+
+<!-- =======================================================
      FOOTER
-========================= -->
+======================================================= -->
 
 <footer>
 
@@ -1128,41 +2417,424 @@ footer {
 </footer>
 
 
-<!-- =========================
+
+<!-- BACK TO TOP -->
+
+<button
+    class="back-top"
+    id="backTop"
+    aria-label="Back to top">
+
+    ↑
+
+</button>
+
+
+
+<!-- =======================================================
      JAVASCRIPT
-========================= -->
+======================================================= -->
 
 <script>
 
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuToggle.addEventListener(
+    "click",
+    () => {
+
+        navLinks.classList.toggle("open");
+
+        menuToggle.textContent =
+            navLinks.classList.contains("open")
+            ? "✕"
+            : "☰";
+
+    }
+);
+
+
 document
-    .querySelectorAll('a[href^="#"]')
-    .forEach(function(link) {
+    .querySelectorAll(".navlinks a")
+    .forEach(link => {
 
         link.addEventListener(
             "click",
-            function(event) {
+            () => {
 
-                const target =
-                    document.querySelector(
-                        link.getAttribute("href")
-                    );
+                navLinks.classList.remove("open");
 
-                if (target) {
-
-                    event.preventDefault();
-
-                    target.scrollIntoView({
-                        behavior: "smooth"
-                    });
-
-                }
+                menuToggle.textContent = "☰";
 
             }
         );
 
     });
 
+
+
+/* =========================================================
+   DARK / LIGHT MODE
+========================================================= */
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+
+const savedTheme =
+    localStorage.getItem("theme");
+
+
+if (savedTheme === "dark") {
+
+    document.documentElement
+        .setAttribute(
+            "data-theme",
+            "dark"
+        );
+
+    themeToggle.textContent = "☀";
+
+}
+
+
+themeToggle.addEventListener(
+    "click",
+    () => {
+
+        const dark =
+            document.documentElement
+                .getAttribute("data-theme")
+                === "dark";
+
+
+        if (dark) {
+
+            document.documentElement
+                .removeAttribute("data-theme");
+
+            localStorage
+                .setItem("theme", "light");
+
+            themeToggle.textContent = "☾";
+
+        } else {
+
+            document.documentElement
+                .setAttribute(
+                    "data-theme",
+                    "dark"
+                );
+
+            localStorage
+                .setItem("theme", "dark");
+
+            themeToggle.textContent = "☀";
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target
+                        .classList
+                        .add("visible");
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+
+revealElements.forEach(
+    element =>
+        revealObserver.observe(element)
+);
+
+
+
+/* =========================================================
+   SKILL BARS
+========================================================= */
+
+const skillBars =
+    document.querySelectorAll(
+        ".skill-fill"
+    );
+
+
+const skillObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const width =
+                        entry.target
+                            .dataset.width;
+
+                    entry.target.style.width =
+                        width;
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .5
+        }
+    );
+
+
+skillBars.forEach(
+    bar =>
+        skillObserver.observe(bar)
+);
+
+
+
+/* =========================================================
+   MOUSE FOLLOW GLOW
+========================================================= */
+
+const glow =
+    document.querySelector(
+        ".cursor-glow"
+    );
+
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+        glow.style.left =
+            event.clientX + "px";
+
+        glow.style.top =
+            event.clientY + "px";
+
+    }
+);
+
+
+
+/* =========================================================
+   3D PROFILE CARD
+========================================================= */
+
+const profileCard =
+    document.getElementById(
+        "profileCard"
+    );
+
+
+profileCard.addEventListener(
+    "mousemove",
+    event => {
+
+        if (
+            window.innerWidth < 850
+        ) return;
+
+
+        const rect =
+            profileCard.getBoundingClientRect();
+
+
+        const x =
+            event.clientX - rect.left;
+
+
+        const y =
+            event.clientY - rect.top;
+
+
+        const centerX =
+            rect.width / 2;
+
+
+        const centerY =
+            rect.height / 2;
+
+
+        const rotateX =
+            ((y - centerY) / centerY)
+            * -5;
+
+
+        const rotateY =
+            ((x - centerX) / centerX)
+            * 5;
+
+
+        profileCard.style.transform =
+            `rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-5px)`;
+
+    }
+);
+
+
+profileCard.addEventListener(
+    "mouseleave",
+    () => {
+
+        profileCard.style.transform =
+            "";
+
+    }
+);
+
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const backTop =
+    document.getElementById(
+        "backTop"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (window.scrollY > 500) {
+
+            backTop.classList.add("show");
+
+        } else {
+
+            backTop.classList.remove("show");
+
+        }
+
+    }
+);
+
+
+backTop.addEventListener(
+    "click",
+    () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+);
+
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+    document.querySelectorAll(
+        "header[id], section[id]"
+    );
+
+
+const navigationLinks =
+    document.querySelectorAll(
+        ".navlinks a"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop - 150;
+
+
+            if (
+                window.scrollY >=
+                sectionTop
+            ) {
+
+                current =
+                    section.getAttribute(
+                        "id"
+                    );
+
+            }
+
+        });
+
+
+        navigationLinks.forEach(link => {
+
+            link.classList.remove(
+                "active"
+            );
+
+
+            if (
+                link.getAttribute("href")
+                === "#" + current
+            ) {
+
+                link.classList.add(
+                    "active"
+                );
+
+            }
+
+        });
+
+    }
+);
+
+
 </script>
 
 </body>
 </html>
+```
