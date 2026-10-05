@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-content="Edwin's Virtual Assistant Portfolio — Administrative Support, Data Entry, Inventory, Research and Operations.">
+content="Edwin Peñacuba Jr. — Virtual Assistant, Administrative Support, Data Entry, E-commerce, Logistics and Operations Professional.">
 
-<title>Edwin | Virtual Assistant Portfolio</title>
+<title>Edwin Peñacuba Jr. | Virtual Assistant Portfolio</title>
 
 <style>
 
@@ -59,22 +59,12 @@ html {
 }
 
 body {
-    font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Inter, Arial, Helvetica, sans-serif;
     background: var(--bg);
     color: var(--text);
-
     line-height: 1.6;
-
     overflow-x: hidden;
-
-    transition:
-        background .3s ease,
-        color .3s ease;
+    transition: background .3s ease, color .3s ease;
 }
 
 a {
@@ -87,28 +77,19 @@ a {
 
 .cursor-glow {
     position: fixed;
-
     width: 350px;
     height: 350px;
-
     border-radius: 50%;
-
     background:
         radial-gradient(
             circle,
             rgba(37,99,235,.13),
             transparent 70%
         );
-
     pointer-events: none;
-
     transform: translate(-50%, -50%);
-
     z-index: -1;
-
-    transition:
-        left .15s ease,
-        top .15s ease;
+    transition: left .15s ease, top .15s ease;
 }
 
 /* =========================================================
@@ -117,18 +98,12 @@ a {
 
 .bg-orb {
     position: fixed;
-
     width: 350px;
     height: 350px;
-
     border-radius: 50%;
-
     filter: blur(90px);
-
     opacity: .18;
-
     pointer-events: none;
-
     z-index: -2;
 }
 
@@ -136,7 +111,6 @@ a {
     background: #2563eb;
     top: 5%;
     left: -100px;
-
     animation: floatOrb 12s ease-in-out infinite;
 }
 
@@ -144,12 +118,10 @@ a {
     background: #7c3aed;
     right: -120px;
     top: 50%;
-
     animation: floatOrb 15s ease-in-out infinite reverse;
 }
 
 @keyframes floatOrb {
-
     0%,100% {
         transform: translateY(0);
     }
@@ -165,52 +137,30 @@ a {
 
 nav {
     position: fixed;
-
     top: 15px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: min(1100px, calc(100% - 30px));
-
     z-index: 1000;
-
     background: var(--nav);
-
     backdrop-filter: blur(18px);
-
-    border:
-        1px solid var(--border);
-
+    border: 1px solid var(--border);
     border-radius: 18px;
-
-    box-shadow:
-        0 10px 40px var(--shadow);
+    box-shadow: 0 10px 40px var(--shadow);
 }
 
 .navbar {
     height: 68px;
-
-    padding:
-        0 20px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
     text-decoration: none;
-
     font-size: 23px;
-
     font-weight: 800;
-
     letter-spacing: -1px;
 }
 
@@ -220,41 +170,28 @@ nav {
 
 .navlinks {
     display: flex;
-
     gap: 5px;
 }
 
 .navlinks a {
-    position: relative;
-
     text-decoration: none;
-
     color: var(--muted);
-
     font-size: 14px;
-
     font-weight: 600;
-
     padding: 10px 13px;
-
     border-radius: 10px;
-
     transition: .25s;
 }
 
 .navlinks a:hover,
 .navlinks a.active {
     color: var(--blue);
-
-    background:
-        var(--blue-soft);
+    background: var(--blue-soft);
 }
 
 .nav-actions {
     display: flex;
-
     align-items: center;
-
     gap: 8px;
 }
 
@@ -262,17 +199,11 @@ nav {
 .menu-toggle {
     width: 40px;
     height: 40px;
-
     border: 1px solid var(--border);
-
     background: var(--card);
-
     color: var(--text);
-
     border-radius: 10px;
-
     cursor: pointer;
-
     font-size: 17px;
 }
 
@@ -286,80 +217,47 @@ nav {
 
 .hero {
     min-height: 100vh;
-
     display: flex;
-
     align-items: center;
-
-    padding:
-        150px 20px 90px;
-
+    padding: 150px 20px 90px;
     position: relative;
 }
 
 .hero-grid {
     width: min(1100px, 100%);
-
     margin: auto;
-
     display: grid;
-
-    grid-template-columns:
-        1.35fr .8fr;
-
+    grid-template-columns: 1.35fr .8fr;
     gap: 70px;
-
     align-items: center;
 }
 
 .badge {
     display: inline-flex;
-
     align-items: center;
-
     gap: 8px;
-
-    background:
-        var(--blue-soft);
-
-    border:
-        1px solid var(--border);
-
+    background: var(--blue-soft);
+    border: 1px solid var(--border);
     color: var(--blue);
-
-    padding:
-        8px 14px;
-
+    padding: 8px 14px;
     border-radius: 50px;
-
     font-size: 12px;
-
     font-weight: 800;
-
     letter-spacing: .7px;
-
     margin-bottom: 22px;
 }
 
 .badge::before {
     content: "";
-
     width: 8px;
     height: 8px;
-
     background: #22c55e;
-
     border-radius: 50%;
-
-    box-shadow:
-        0 0 0 5px rgba(34,197,94,.12);
-
-    animation:
-        pulse 2s infinite;
+    box-shadow: 0 0 0 5px rgba(34,197,94,.12);
+    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-
     0%,100% {
         transform: scale(1);
     }
@@ -370,15 +268,10 @@ nav {
 }
 
 .hero h1 {
-    font-size:
-        clamp(48px, 7vw, 78px);
-
+    font-size: clamp(48px, 7vw, 78px);
     line-height: 1;
-
     letter-spacing: -4px;
-
     max-width: 800px;
-
     margin-bottom: 25px;
 }
 
@@ -392,105 +285,64 @@ nav {
         );
 
     background-size: 200% auto;
-
     color: transparent;
-
     background-clip: text;
-
     -webkit-background-clip: text;
-
-    animation:
-        gradientMove 4s linear infinite;
+    animation: gradientMove 4s linear infinite;
 }
 
 @keyframes gradientMove {
-
     to {
-        background-position:
-            200% center;
+        background-position: 200% center;
     }
 }
 
 .hero-description {
     color: var(--muted);
-
     font-size: 18px;
-
     max-width: 680px;
 }
 
 .buttons {
     display: flex;
-
     gap: 12px;
-
     margin-top: 32px;
-
     flex-wrap: wrap;
 }
 
 .btn {
-    position: relative;
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 8px;
-
-    padding:
-        13px 21px;
-
+    padding: 13px 21px;
     border-radius: 11px;
-
     text-decoration: none;
-
     font-weight: 700;
-
-    border:
-        1px solid var(--border);
-
-    overflow: hidden;
-
-    transition:
-        transform .25s,
-        box-shadow .25s;
+    border: 1px solid var(--border);
+    transition: transform .25s, box-shadow .25s;
 }
 
 .btn:hover {
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 12px 30px var(--shadow);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px var(--shadow);
 }
 
 .btn-primary {
     color: white;
-
     background:
         linear-gradient(
             135deg,
             #2563eb,
             #4f46e5
         );
-
     border: none;
 }
 
 .btn-secondary {
-    background:
-        var(--card);
-
-    color:
-        var(--text);
+    background: var(--card);
+    color: var(--text);
 }
-
-/* =========================================================
-   RESUME BUTTON
-========================================================= */
 
 .btn-resume {
     background:
@@ -501,20 +353,12 @@ nav {
         );
 
     color: white;
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-        0 8px 20px rgba(15,23,42,.15);
+    border: 1px solid rgba(255,255,255,.08);
 }
 
 .btn-resume:hover {
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 14px 30px rgba(15,23,42,.25);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(15,23,42,.25);
 }
 
 /* =========================================================
@@ -522,41 +366,23 @@ nav {
 ========================================================= */
 
 .profile-wrapper {
-    perspective:
-        1000px;
+    perspective: 1000px;
 }
 
 .profile-card {
     position: relative;
-
     padding: 30px;
-
     border-radius: 28px;
-
-    background:
-        var(--card);
-
-    backdrop-filter:
-        blur(20px);
-
-    border:
-        1px solid var(--border);
-
-    box-shadow:
-        0 30px 70px var(--shadow);
-
-    transform-style:
-        preserve-3d;
-
-    transition:
-        transform .2s ease;
-
-    animation:
-        cardFloat 5s ease-in-out infinite;
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    box-shadow: 0 30px 70px var(--shadow);
+    transform-style: preserve-3d;
+    transition: transform .2s ease;
+    animation: cardFloat 5s ease-in-out infinite;
 }
 
 @keyframes cardFloat {
-
     0%,100% {
         transform: translateY(0);
     }
@@ -568,13 +394,9 @@ nav {
 
 .profile-card::before {
     content: "";
-
     position: absolute;
-
     inset: -1px;
-
     border-radius: 28px;
-
     background:
         linear-gradient(
             135deg,
@@ -582,38 +404,26 @@ nav {
             transparent 50%,
             rgba(124,58,237,.3)
         );
-
     z-index: -1;
-
     opacity: .5;
 }
 
 .avatar {
     width: 105px;
     height: 105px;
-
     border-radius: 50%;
-
     display: grid;
-
     place-items: center;
-
     color: white;
-
     font-size: 38px;
-
     font-weight: 900;
-
     background:
         linear-gradient(
             135deg,
             #2563eb,
             #7c3aed
         );
-
-    box-shadow:
-        0 15px 40px rgba(37,99,235,.3);
-
+    box-shadow: 0 15px 40px rgba(37,99,235,.3);
     margin-bottom: 20px;
 }
 
@@ -623,7 +433,6 @@ nav {
 
 .profile-card > p {
     color: var(--muted);
-
     font-size: 14px;
 }
 
@@ -633,17 +442,10 @@ nav {
 
 .info div {
     display: flex;
-
-    justify-content:
-        space-between;
-
+    justify-content: space-between;
     gap: 15px;
-
     padding: 11px 0;
-
-    border-bottom:
-        1px solid var(--border);
-
+    border-bottom: 1px solid var(--border);
     font-size: 13px;
 }
 
@@ -656,14 +458,11 @@ nav {
 ========================================================= */
 
 section {
-    padding:
-        110px 20px;
+    padding: 110px 20px;
 }
 
 .container {
-    width:
-        min(1100px, 100%);
-
+    width: min(1100px, 100%);
     margin: auto;
 }
 
@@ -673,55 +472,38 @@ section {
 
 .eyebrow {
     color: var(--blue);
-
     font-size: 12px;
-
     font-weight: 900;
-
     text-transform: uppercase;
-
     letter-spacing: 2px;
 }
 
 h2 {
-    font-size:
-        clamp(34px, 5vw, 48px);
-
+    font-size: clamp(34px, 5vw, 48px);
     line-height: 1.1;
-
     letter-spacing: -2px;
-
     margin-top: 7px;
 }
 
 .section-head p {
     color: var(--muted);
-
     max-width: 700px;
-
     margin-top: 12px;
 }
 
 /* =========================================================
-   REVEAL ANIMATION
+   REVEAL
 ========================================================= */
 
 .reveal {
     opacity: 0;
-
-    transform:
-        translateY(35px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
 }
 
 .reveal.visible {
     opacity: 1;
-
-    transform:
-        translateY(0);
+    transform: translateY(0);
 }
 
 /* =========================================================
@@ -729,63 +511,40 @@ h2 {
 ========================================================= */
 
 .about-grid {
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
 }
 
 .about-text {
     color: var(--muted);
-
     font-size: 16px;
 }
 
 .skills {
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 18px;
 }
 
 .skill-item {
-    background:
-        var(--card);
-
-    border:
-        1px solid var(--border);
-
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 13px;
-
     padding: 15px;
-
     transition: .25s;
 }
 
 .skill-item:hover {
-    transform:
-        translateY(-4px);
-
-    border-color:
-        rgba(37,99,235,.35);
+    transform: translateY(-4px);
+    border-color: rgba(37,99,235,.35);
 }
 
 .skill-top {
     display: flex;
-
-    justify-content:
-        space-between;
-
+    justify-content: space-between;
     font-size: 13px;
-
     font-weight: 700;
-
     margin-bottom: 9px;
 }
 
@@ -795,31 +554,57 @@ h2 {
 
 .skill-bar {
     height: 6px;
-
     border-radius: 10px;
-
-    background:
-        var(--border);
-
+    background: var(--border);
     overflow: hidden;
 }
 
 .skill-fill {
     height: 100%;
-
     width: 0;
-
     border-radius: inherit;
-
     background:
         linear-gradient(
             90deg,
             #2563eb,
             #7c3aed
         );
-
     transition:
         width 1.5s cubic-bezier(.2,.8,.2,1);
+}
+
+/* =========================================================
+   TECHNICAL PROFICIENCIES
+========================================================= */
+
+.proficiency-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.proficiency {
+    padding: 18px;
+    border-radius: 15px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    font-size: 14px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.proficiency:hover {
+    transform: translateY(-5px);
+    border-color: rgba(37,99,235,.35);
+}
+
+.proficiency span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;
 }
 
 /* =========================================================
@@ -827,35 +612,22 @@ h2 {
 ========================================================= */
 
 .services-section {
-    background:
-        var(--bg-secondary);
+    background: var(--bg-secondary);
 }
 
 .cards {
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
 .card {
     position: relative;
-
     padding: 28px;
-
     border-radius: 20px;
-
-    background:
-        var(--card);
-
-    border:
-        1px solid var(--border);
-
+    background: var(--card);
+    border: 1px solid var(--border);
     overflow: hidden;
-
     transition:
         transform .3s ease,
         box-shadow .3s ease,
@@ -864,1673 +636,8 @@ h2 {
 
 .card::after {
     content: "";
-
     position: absolute;
-
     width: 120px;
     height: 120px;
-
     border-radius: 50%;
-
-    background:
-        rgba(37,99,235,.12);
-
-    filter: blur(25px);
-
-    top: -70px;
-    right: -70px;
-
-    transition: .3s;
-}
-
-.card:hover {
-    transform:
-        translateY(-10px);
-
-    box-shadow:
-        0 25px 50px var(--shadow);
-
-    border-color:
-        rgba(37,99,235,.35);
-}
-
-.card:hover::after {
-    transform:
-        scale(1.8);
-}
-
-.icon {
-    width: 52px;
-    height: 52px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 14px;
-
-    background:
-        var(--blue-soft);
-
-    font-size: 25px;
-
-    margin-bottom: 20px;
-}
-
-.card h3 {
-    margin-bottom: 8px;
-
-    font-size: 19px;
-}
-
-.card p {
-    color:
-        var(--muted);
-
-    font-size: 14px;
-}
-
-/* =========================================================
-   EXPERIENCE
-========================================================= */
-
-.timeline {
-    position: relative;
-}
-
-.timeline::before {
-    content: "";
-
-    position: absolute;
-
-    left: 8px;
-
-    top: 0;
-    bottom: 0;
-
-    width: 2px;
-
-    background:
-        var(--border);
-}
-
-.experience {
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns:
-        180px 1fr;
-
-    gap: 30px;
-
-    padding:
-        0 0 45px 40px;
-}
-
-.experience::before {
-    content: "";
-
-    position: absolute;
-
-    left: 2px;
-
-    top: 4px;
-
-    width: 14px;
-    height: 14px;
-
-    border-radius: 50%;
-
-    background:
-        var(--blue);
-
-    box-shadow:
-        0 0 0 5px var(--blue-soft);
-}
-
-.date {
-    color: var(--blue);
-
-    font-size: 13px;
-
-    font-weight: 800;
-}
-
-.experience h3 {
-    font-size: 21px;
-}
-
-.experience p {
-    color:
-        var(--muted);
-
-    margin-top: 8px;
-}
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
-.projects-section {
-    background:
-        var(--bg-secondary);
-}
-
-.project {
-    position: relative;
-
-    min-height: 260px;
-
-    padding: 30px;
-
-    border-radius: 22px;
-
-    color: white;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            #0f172a,
-            #111827
-        );
-
-    transition:
-        transform .35s ease;
-}
-
-.project::before {
-    content: "";
-
-    position: absolute;
-
-    width: 250px;
-    height: 250px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(37,99,235,.25);
-
-    filter: blur(70px);
-
-    right: -80px;
-    bottom: -100px;
-}
-
-.project:hover {
-    transform:
-        translateY(-10px)
-        rotateX(2deg);
-}
-
-.project-content {
-    position: relative;
-
-    z-index: 2;
-
-    height: 100%;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    justify-content:
-        space-between;
-}
-
-.project-tag {
-    color:
-        #93c5fd;
-
-    font-size: 11px;
-
-    font-weight: 900;
-
-    letter-spacing: 1.5px;
-
-    text-transform:
-        uppercase;
-
-    margin-bottom: 9px;
-}
-
-.project h3 {
-    font-size: 21px;
-}
-
-.project p {
-    color:
-        #cbd5e1;
-
-    margin-top: 10px;
-
-    font-size: 14px;
-}
-
-.project-tools {
-    margin-top: 25px;
-
-    color:
-        #93c5fd;
-
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact {
-    color: white;
-
-    background:
-        radial-gradient(
-            circle at 20% 30%,
-            rgba(37,99,235,.35),
-            transparent 35%
-        ),
-        #020617;
-}
-
-.contact-box {
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap: 40px;
-}
-
-.contact h2 {
-    margin-top: 5px;
-}
-
-.contact p {
-    color:
-        #cbd5e1;
-
-    max-width: 650px;
-
-    margin-top: 12px;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    background:
-        #01030a;
-
-    color:
-        #64748b;
-
-    text-align:
-        center;
-
-    padding:
-        25px;
-
-    font-size: 13px;
-}
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-.back-top {
-    position: fixed;
-
-    right: 25px;
-    bottom: 25px;
-
-    width: 45px;
-    height: 45px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 50%;
-
-    border: 1px solid var(--border);
-
-    background: var(--card);
-
-    backdrop-filter: blur(10px);
-
-    color: var(--text);
-
-    cursor: pointer;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform:
-        translateY(15px);
-
-    transition: .3s;
-
-    z-index: 500;
-}
-
-.back-top.show {
-    opacity: 1;
-
-    visibility: visible;
-
-    transform:
-        translateY(0);
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 850px) {
-
-    nav {
-        top: 10px;
-    }
-
-    .navlinks {
-
-        position: absolute;
-
-        top: 75px;
-
-        left: 0;
-        right: 0;
-
-        padding: 12px;
-
-        display:
-            none;
-
-        flex-direction:
-            column;
-
-        background:
-            var(--nav);
-
-        backdrop-filter:
-            blur(20px);
-
-        border:
-            1px solid var(--border);
-
-        border-radius:
-            15px;
-    }
-
-    .navlinks.open {
-        display: flex;
-    }
-
-    .navlinks a {
-        width: 100%;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .hero {
-        padding-top: 130px;
-    }
-
-    .hero-grid,
-    .about-grid {
-        grid-template-columns:
-            1fr;
-    }
-
-    .hero-grid {
-        gap: 50px;
-    }
-
-    .cards {
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-    .skills {
-        grid-template-columns:
-            1fr;
-    }
-
-}
-
-@media (max-width: 600px) {
-
-    section {
-        padding:
-            80px 20px;
-    }
-
-    .hero h1 {
-        font-size: 49px;
-
-        letter-spacing:
-            -3px;
-    }
-
-    .hero-description {
-        font-size: 16px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .experience {
-        grid-template-columns: 1fr;
-        gap: 5px;
-    }
-
-    .contact-box {
-        flex-direction:
-            column;
-
-        align-items:
-            flex-start;
-    }
-
-}
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-
-        animation-duration:
-            .01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        scroll-behavior:
-            auto !important;
-
-        transition-duration:
-            .01ms !important;
-    }
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- BACKGROUND -->
-
-<div class="cursor-glow"></div>
-
-<div class="bg-orb orb-one"></div>
-<div class="bg-orb orb-two"></div>
-
-<!-- =======================================================
-     NAVIGATION
-======================================================= -->
-
-<nav>
-
-    <div class="navbar">
-
-        <a href="#home" class="logo">
-            Edwin<span>.</span>
-        </a>
-
-        <div class="navlinks" id="navLinks">
-
-            <a href="#home">Home</a>
-
-            <a href="#about">About</a>
-
-            <a href="#services">Services</a>
-
-            <a href="#experience">Experience</a>
-
-            <a href="#projects">Projects</a>
-
-            <a href="#contact">Contact</a>
-
-        </div>
-
-        <div class="nav-actions">
-
-            <button
-                class="theme-toggle"
-                id="themeToggle"
-                aria-label="Toggle dark mode">
-
-                ☾
-
-            </button>
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open menu">
-
-                ☰
-
-            </button>
-
-        </div>
-
-    </div>
-
-</nav>
-
-<!-- =======================================================
-     HERO
-======================================================= -->
-
-<header class="hero" id="home">
-
-    <div class="hero-grid">
-
-        <div class="reveal">
-
-            <div class="badge">
-                AVAILABLE FOR VA OPPORTUNITIES
-            </div>
-
-            <h1>
-
-                Reliable support for your
-
-                <span class="gradient-text">
-                    business.
-                </span>
-
-            </h1>
-
-            <p class="hero-description">
-
-                Hi, I'm Edwin — an administrative and
-                warehouse operations professional
-                transitioning my hands-on experience
-                into Virtual Assistance.
-
-                <br><br>
-
-                I help businesses stay organized through
-                accurate data, documentation, inventory
-                support, research, and day-to-day
-                administrative tasks.
-
-            </p>
-
-            <div class="buttons">
-
-                <a
-                    href="#contact"
-                    class="btn btn-primary">
-
-                    Let's Work Together →
-
-                </a>
-
-                <a
-                    href="#projects"
-                    class="btn btn-secondary">
-
-                    View My Work
-
-                </a>
-
-                <a
-                    href="Edwin-Penacuba-Resume.pdf"
-                    download
-                    class="btn btn-resume">
-
-                    Download Resume ↓
-
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- PROFILE -->
-
-        <div class="profile-wrapper reveal">
-
-            <div
-                class="profile-card"
-                id="profileCard">
-
-                <div class="avatar">
-                    E
-                </div>
-
-                <h3>
-                    Edwin
-                </h3>
-
-                <p>
-                    Virtual Assistant |
-                    Admin Support |
-                    Operations
-                </p>
-
-                <div class="info">
-
-                    <div>
-
-                        <span>
-                            Based in
-                        </span>
-
-                        <strong>
-                            Philippines
-                        </strong>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Focus
-                        </span>
-
-                        <strong>
-                            Remote Support
-                        </strong>
-
-                    </div>
-
-                    <div>
-
-                        <span>
-                            Work Style
-                        </span>
-
-                        <strong>
-                            Accurate & Organized
-                        </strong>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</header>
-
-<!-- =======================================================
-     ABOUT
-======================================================= -->
-
-<section id="about">
-
-    <div class="container">
-
-        <div class="section-head reveal">
-
-            <div class="eyebrow">
-                About Me
-            </div>
-
-            <h2>
-                Organized, dependable,
-                and detail-oriented.
-            </h2>
-
-            <p>
-                I bring real-world operations
-                experience into remote
-                administrative work.
-            </p>
-
-        </div>
-
-        <div class="about-grid">
-
-            <div class="about-text reveal">
-
-                My experience in warehouse administration
-                has trained me to work with documents,
-                inventory records, spreadsheets, reports,
-                receiving and delivery coordination,
-                item checking, and daily operational
-                concerns.
-
-                <br><br>
-
-                I understand how important accuracy,
-                deadlines, clear communication, and
-                proper documentation are to a business.
-
-                <br><br>
-
-                I am now applying these skills to
-                Virtual Assistant and remote
-                administrative roles.
-
-            </div>
-
-            <div class="skills reveal">
-
-                <div class="skill-item">
-
-                    <div class="skill-top">
-                        <strong>Data Entry</strong>
-                        <span>95%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div
-                            class="skill-fill"
-                            data-width="95%">
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-top">
-                        <strong>Microsoft Excel</strong>
-                        <span>90%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div
-                            class="skill-fill"
-                            data-width="90%">
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-top">
-                        <strong>Documentation</strong>
-                        <span>95%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div
-                            class="skill-fill"
-                            data-width="95%">
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-top">
-                        <strong>Inventory Support</strong>
-                        <span>95%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div
-                            class="skill-fill"
-                            data-width="95%">
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-top">
-                        <strong>Web Research</strong>
-                        <span>85%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div
-                            class="skill-fill"
-                            data-width="85%">
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-top">
-                        <strong>Communication</strong>
-                        <span>90%</span>
-                    </div>
-
-                    <div class="skill-bar">
-                        <div
-                            class="skill-fill"
-                            data-width="90%">
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =======================================================
-     SERVICES
-======================================================= -->
-
-<section
-    id="services"
-    class="services-section">
-
-    <div class="container">
-
-        <div class="section-head reveal">
-
-            <div class="eyebrow">
-                What I Can Do
-            </div>
-
-            <h2>
-                Services
-            </h2>
-
-        </div>
-
-        <div class="cards">
-
-            <div class="card reveal">
-
-                <div class="icon">
-                    📊
-                </div>
-
-                <h3>
-                    Data & Spreadsheet Support
-                </h3>
-
-                <p>
-                    Data entry, Excel worksheets,
-                    inventory lists, checking records,
-                    sorting information, and maintaining
-                    accurate files.
-                </p>
-
-            </div>
-
-            <div class="card reveal">
-
-                <div class="icon">
-                    📁
-                </div>
-
-                <h3>
-                    Administrative Support
-                </h3>
-
-                <p>
-                    Document preparation, file organization,
-                    reports, forms, transmittals, tracking
-                    sheets, and routine administrative tasks.
-                </p>
-
-            </div>
-
-            <div class="card reveal">
-
-                <div class="icon">
-                    🔎
-                </div>
-
-                <h3>
-                    Research & Online Tasks
-                </h3>
-
-                <p>
-                    Web research, product information
-                    gathering, comparing details,
-                    organizing findings, and preparing
-                    summaries.
-                </p>
-
-            </div>
-
-            <div class="card reveal">
-
-                <div class="icon">
-                    📦
-                </div>
-
-                <h3>
-                    Inventory & Operations
-                </h3>
-
-                <p>
-                    Stock checking, item verification,
-                    labeling, inventory documentation,
-                    receiving support, and delivery
-                    coordination.
-                </p>
-
-            </div>
-
-            <div class="card reveal">
-
-                <div class="icon">
-                    ✉️
-                </div>
-
-                <h3>
-                    Email & Communication
-                </h3>
-
-                <p>
-                    Professional messages, follow-ups,
-                    status updates, coordination, and
-                    clear communication with clients
-                    or teams.
-                </p>
-
-            </div>
-
-            <div class="card reveal">
-
-                <div class="icon">
-                    🗂️
-                </div>
-
-                <h3>
-                    File & Record Management
-                </h3>
-
-                <p>
-                    Keeping digital records structured,
-                    easy to find, updated, and consistent
-                    with business requirements.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =======================================================
-     EXPERIENCE
-======================================================= -->
-
-<section id="experience">
-
-    <div class="container">
-
-        <div class="section-head reveal">
-
-            <div class="eyebrow">
-                Background
-            </div>
-
-            <h2>
-                Relevant Experience
-            </h2>
-
-        </div>
-
-        <div class="timeline">
-
-            <div class="experience reveal">
-
-                <div class="date">
-                    Current Experience
-                </div>
-
-                <div>
-
-                    <h3>
-                        Warehouse / Administrative Operations
-                    </h3>
-
-                    <p>
-
-                        Supporting warehouse operations
-                        through inventory documentation,
-                        stock checking, receiving and
-                        delivery coordination, discrepancy
-                        reporting, item labeling, record
-                        keeping, and daily administrative
-                        tasks.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="experience reveal">
-
-                <div class="date">
-                    Transferable Skills
-                </div>
-
-                <div>
-
-                    <h3>
-                        Operations to Virtual Assistance
-                    </h3>
-
-                    <p>
-
-                        Hands-on operations experience
-                        developed strong attention to detail,
-                        deadline management, spreadsheet
-                        handling, communication, problem
-                        solving, and the ability to follow
-                        processes accurately.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =======================================================
-     PROJECTS
-======================================================= -->
-
-<section
-    id="projects"
-    class="projects-section">
-
-    <div class="container">
-
-        <div class="section-head reveal">
-
-            <div class="eyebrow">
-                Sample Work
-            </div>
-
-            <h2>
-                Portfolio Projects
-            </h2>
-
-            <p>
-                Practical examples based on
-                administrative and operations work.
-            </p>
-
-        </div>
-
-        <div class="cards">
-
-            <div class="project reveal">
-
-                <div class="project-content">
-
-                    <div>
-
-                        <div class="project-tag">
-                            Spreadsheet
-                        </div>
-
-                        <h3>
-                            Inventory Tracking Sheet
-                        </h3>
-
-                        <p>
-
-                            Organized stock information
-                            with item details, quantities,
-                            status tracking, and checking
-                            fields.
-
-                        </p>
-
-                    </div>
-
-                    <div class="project-tools">
-                        Excel / Google Sheets →
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="project reveal">
-
-                <div class="project-content">
-
-                    <div>
-
-                        <div class="project-tag">
-                            Documentation
-                        </div>
-
-                        <h3>
-                            Operations Report
-                        </h3>
-
-                        <p>
-
-                            Clear and structured reporting
-                            for receiving, delivery,
-                            discrepancies, and operational
-                            concerns.
-
-                        </p>
-
-                    </div>
-
-                    <div class="project-tools">
-                        Word / Google Docs →
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="project reveal">
-
-                <div class="project-content">
-
-                    <div>
-
-                        <div class="project-tag">
-                            Research
-                        </div>
-
-                        <h3>
-                            Logistics Research
-                        </h3>
-
-                        <p>
-
-                            Collected and organized provider
-                            information, schedules, locations,
-                            rates, and service details.
-
-                        </p>
-
-                    </div>
-
-                    <div class="project-tools">
-                        Web Research →
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =======================================================
-     CONTACT
-======================================================= -->
-
-<section
-    id="contact"
-    class="contact">
-
-    <div class="container">
-
-        <div class="contact-box reveal">
-
-            <div>
-
-                <div class="eyebrow">
-                    Get In Touch
-                </div>
-
-                <h2>
-                    Let's work together.
-                </h2>
-
-                <p>
-
-                    I'm open to Virtual Assistant,
-                    administrative support, data entry,
-                    and operations-related opportunities.
-
-                </p>
-
-            </div>
-
-            <div>
-
-                <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=edwinpenacubajr@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-primary">
-
-                    Email Me
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
-<footer>
-
-    © 2026 Edwin.
-    Virtual Assistant Portfolio.
-
-</footer>
-
-<!-- BACK TO TOP -->
-
-<button
-    class="back-top"
-    id="backTop"
-    aria-label="Back to top">
-
-    ↑
-
-</button>
-
-<!-- =======================================================
-     JAVASCRIPT
-======================================================= -->
-
-<script>
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const menuToggle =
-    document.getElementById("menuToggle");
-
-const navLinks =
-    document.getElementById("navLinks");
-
-menuToggle.addEventListener(
-    "click",
-    () => {
-
-        navLinks.classList.toggle("open");
-
-        menuToggle.textContent =
-            navLinks.classList.contains("open")
-            ? "✕"
-            : "☰";
-
-    }
-);
-
-document
-    .querySelectorAll(".navlinks a")
-    .forEach(link => {
-
-        link.addEventListener(
-            "click",
-            () => {
-
-                navLinks.classList.remove("open");
-
-                menuToggle.textContent = "☰";
-
-            }
-        );
-
-    });
-
-/* =========================================================
-   DARK / LIGHT MODE
-========================================================= */
-
-const themeToggle =
-    document.getElementById("themeToggle");
-
-const savedTheme =
-    localStorage.getItem("theme");
-
-if (savedTheme === "dark") {
-
-    document.documentElement
-        .setAttribute(
-            "data-theme",
-            "dark"
-        );
-
-    themeToggle.textContent = "☀";
-
-}
-
-themeToggle.addEventListener(
-    "click",
-    () => {
-
-        const dark =
-            document.documentElement
-                .getAttribute("data-theme")
-                === "dark";
-
-        if (dark) {
-
-            document.documentElement
-                .removeAttribute("data-theme");
-
-            localStorage
-                .setItem("theme", "light");
-
-            themeToggle.textContent = "☾";
-
-        } else {
-
-            document.documentElement
-                .setAttribute(
-                    "data-theme",
-                    "dark"
-                );
-
-            localStorage
-                .setItem("theme", "dark");
-
-            themeToggle.textContent = "☀";
-
-        }
-
-    }
-);
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-const revealObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target
-                        .classList
-                        .add("visible");
-
-                }
-
-            });
-
-        },
-        {
-            threshold: .12
-        }
-    );
-
-revealElements.forEach(
-    element =>
-        revealObserver.observe(element)
-);
-
-/* =========================================================
-   SKILL BARS
-========================================================= */
-
-const skillBars =
-    document.querySelectorAll(
-        ".skill-fill"
-    );
-
-const skillObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    const width =
-                        entry.target
-                            .dataset.width;
-
-                    entry.target.style.width =
-                        width;
-
-                }
-
-            });
-
-        },
-        {
-            threshold: .5
-        }
-    );
-
-skillBars.forEach(
-    bar =>
-        skillObserver.observe(bar)
-);
-
-/* =========================================================
-   MOUSE FOLLOW GLOW
-========================================================= */
-
-const glow =
-    document.querySelector(
-        ".cursor-glow"
-    );
-
-document.addEventListener(
-    "mousemove",
-    event => {
-
-        glow.style.left =
-            event.clientX + "px";
-
-        glow.style.top =
-            event.clientY + "px";
-
-    }
-);
-
-/* =========================================================
-   3D PROFILE CARD
-========================================================= */
-
-const profileCard =
-    document.getElementById(
-        "profileCard"
-    );
-
-profileCard.addEventListener(
-    "mousemove",
-    event => {
-
-        if (
-            window.innerWidth < 850
-        ) return;
-
-        const rect =
-            profileCard.getBoundingClientRect();
-
-        const x =
-            event.clientX - rect.left;
-
-        const y =
-            event.clientY - rect.top;
-
-        const centerX =
-            rect.width / 2;
-
-        const centerY =
-            rect.height / 2;
-
-        const rotateX =
-            ((y - centerY) / centerY)
-            * -5;
-
-        const rotateY =
-            ((x - centerX) / centerX)
-            * 5;
-
-        profileCard.style.transform =
-            `rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             translateY(-5px)`;
-
-    }
-);
-
-profileCard.addEventListener(
-    "mouseleave",
-    () => {
-
-        profileCard.style.transform =
-            "";
-
-    }
-);
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-const backTop =
-    document.getElementById(
-        "backTop"
-    );
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        if (window.scrollY > 500) {
-
-            backTop.classList.add("show");
-
-        } else {
-
-            backTop.classList.remove("show");
-
-        }
-
-    }
-);
-
-backTop.addEventListener(
-    "click",
-    () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
-);
-
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
-
-const sections =
-    document.querySelectorAll(
-        "header[id], section[id]"
-    );
-
-const navigationLinks =
-    document.querySelectorAll(
-        ".navlinks a"
-    );
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop - 150;
-
-            if (
-                window.scrollY >=
-                sectionTop
-            ) {
-
-                current =
-                    section.getAttribute(
-                        "id"
-                    );
-
-            }
-
-        });
-
-        navigationLinks.forEach(link => {
-
-            link.classList.remove(
-                "active"
-            );
-
-            if (
-                link.getAttribute("href")
-                === "#" + current
-            ) {
-
-                link.classList.add(
-                    "active"
-                );
-
-            }
-
-        });
-
-    }
-);
-
-</script>
-
-</body>
-</html>
+    background: rgba(
