@@ -1195,6 +1195,22 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
   #contact .contact-info-panel .avail{grid-template-columns:1fr!important;}
 }
 </style>
+<style id="about-even-horizontal-spacing">
+/* Preserve justified paragraphs, with balanced left/right inset and less stretched words. */
+#about .about-text { padding-left: 30px; padding-right: 12px; box-sizing: border-box; }
+#about .about-text p { text-align: justify !important; text-align-last: left; text-justify: inter-word; word-spacing: normal; letter-spacing: normal; hyphens: auto; overflow-wrap: break-word; }
+@media (max-width: 700px) { #about .about-text { padding-left: 14px; padding-right: 6px; } #about .about-text p { text-align: left !important; hyphens: none; } }
+</style>
+<style id="about-paragraph-indent-final">
+/* Preserve the balanced right shift; keep complete words and indent each paragraph. */
+#about .about-text p {
+  text-indent: 1.25em !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+</style>
 </head>
 <body>
 <div class="cursor-glow"></div>
