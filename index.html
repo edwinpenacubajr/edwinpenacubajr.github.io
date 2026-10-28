@@ -85,6 +85,9 @@ h2{font-size:clamp(28px,3.8vw,39px);letter-spacing:-1.4px}
 #projects .petty-preview img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 20%;transition:transform .25s ease}
 #projects .petty-preview:hover img{transform:scale(1.035)}
 @media(max-width:580px){#projects .petty-preview{height:135px}}
+
+
+
 </style></noscript>
 <style>
 /* ROOT */
@@ -576,8 +579,73 @@ section:not(.hero){scroll-margin-top:105px}
 [data-theme="dark"] #projects .petty-project .petty-preview{background:#fff;border-color:#93b5ec;box-shadow:none;}
 @media(max-width:600px){#projects .petty-project .petty-preview{height:165px;flex-basis:165px;}}
 </style>
+
+
+
+
+
+<style id="card-network-visible-fix">
+/* Actual in-card network layer: unlike the page canvas, this sits ABOVE each card's opaque surface. */
+:root{--card-line-alpha:.25}
+[data-theme="dark"]{--card-line-alpha:.40}
+.has-inner-network{position:relative!important;isolation:isolate;overflow:hidden}
+.has-inner-network>.inner-network-lines{position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important;border-radius:inherit;opacity:var(--card-line-alpha);background-repeat:repeat;background-size:320px 210px;animation:inner-network-flow 28s linear infinite;}
+.has-inner-network>*:not(.inner-network-lines){position:relative;z-index:2}
+.has-inner-network::before,.has-inner-network::after{pointer-events:none}
+@keyframes inner-network-flow{from{background-position:0 0}to{background-position:320px 210px}}
+@media(max-width:650px){:root{--card-line-alpha:.19}[data-theme="dark"]{--card-line-alpha:.31}}
+@media(prefers-reduced-motion:reduce){.has-inner-network>.inner-network-lines{animation:none}}
+</style>
+
+<style id="network-cards-only-restoration">
+/* Animated network is intentionally confined to the individual content cards. */
+body{background:var(--bg)!important}
+.services-section,.education-section,.projects-section{background:var(--bg-secondary)!important}
+.has-inner-network{background-color:var(--card);}
+#about .about-grid{border-radius:20px;padding:18px;background:var(--card);border:1px solid var(--border)}
+#experience .experience{border-radius:16px;background:var(--card);border:1px solid var(--border);padding-top:18px;padding-right:18px;margin-bottom:14px}
+#contact .contact-box{background:#07152f;color:#fff;border:1px solid rgba(147,197,253,.24);border-radius:22px;padding:24px}
+#contact .contact-box p,#contact .contact-box .contact-details{color:#cbd5e1}
+#contact .contact-box a{color:#93c5fd}
+#contact .contact-box .btn-primary{color:#fff}
+@media(max-width:600px){#about .about-grid{padding:15px}#contact .contact-box{padding:18px}}
+</style>
+
+<style id="hero-screenshot-restoration">
+/* Restore the clean dotted hero from the reference screenshot; networks stay inside cards only. */
+#home.hero{min-height:auto!important;align-items:flex-start!important;padding:108px 20px 54px!important}
+#home .hero-grid{margin:0 auto!important;align-items:center!important}
+#home .hero-grid>.reveal{opacity:1!important;visibility:visible!important;transform:none!important}
+#home::before{z-index:0!important;opacity:1!important}
+#home .hero-grid{position:relative;z-index:1}
+@media(max-width:850px){#home.hero{padding:106px 20px 46px!important}}
+@media(max-width:600px){#home.hero{padding:112px 17px 38px!important}#home .hero-grid{gap:30px!important}}
+</style>
+
+<style id="hero-plain-background-only">
+/* Hero: plain theme background, no dots or animated network; retain all content. */
+#home.hero{background:var(--bg)!important;}
+#home.hero::before{display:none!important;}
+#home.hero::after{display:none!important;}
+</style>
+<style id="skills-network-visibility-enhancement">
+/* Show the moving network clearly within each Technical Skills card only. */
+#skills .skill-item.has-inner-network{background:var(--card);isolation:isolate;}
+#skills .skill-item.has-inner-network > .inner-network-lines{
+  opacity:.48!important;
+  background-size:250px 165px!important;
+  animation-duration:24s!important;
+}
+[data-theme="dark"] #skills .skill-item.has-inner-network > .inner-network-lines{opacity:.38!important;}
+#skills .skill-item.has-inner-network > .skill-top,
+#skills .skill-item.has-inner-network > .skill-bar{z-index:3;position:relative;}
+#skills .skill-item.has-inner-network > .skill-bar{background:rgba(148,163,184,.28);}
+@media(max-width:650px){#skills .skill-item.has-inner-network > .inner-network-lines{opacity:.37!important}}
+@media(prefers-reduced-motion:reduce){#skills .skill-item.has-inner-network > .inner-network-lines{animation:none!important}}
+</style>
 </head>
 <body>
+
 
 <div class="cursor-glow"></div>
 <div class="bg-orb orb-one"></div>
@@ -1171,5 +1239,23 @@ document.querySelector("footer").innerHTML =
     `© ${new Date().getFullYear()} Edwin Peñacuba Jr. • Operations & Administrative Support`;
 </script>
 
+
+
+<script id="card-network-visible-init">
+(function(){
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="320" height="210" viewBox="0 0 320 210"><g fill="none" stroke="#3981ff" stroke-width="1.15"><path d="M-20 33L65 13 140 68 228 10 330 47M-20 33L38 131 140 68 190 170 330 47M38 131L-10 210 190 170 272 205 330 130M65 13L38 131 190 170 228 10 330 130M140 68L272 205 330 47M-10 210L140 68 330 130"/></g></svg>';
+  const uri='url("data:image/svg+xml,'+encodeURIComponent(svg)+'")';
+  const selector=['.profile-card','#about .about-grid','#services .card','#experience .experience','#education .education-card','#skills .skill-item','#skills .card','#skills .tool-group','.highlight','#projects .project','#contact .contact-box'];
+  document.querySelectorAll(selector.join(',')).forEach((box)=>{
+    if(box.classList.contains('has-inner-network'))return;
+    box.classList.add('has-inner-network');
+    const layer=document.createElement('span');
+    layer.className='inner-network-lines';
+    layer.setAttribute('aria-hidden','true');
+    layer.style.backgroundImage=uri;
+    box.insertBefore(layer,box.firstChild);
+  });
+})();
+</script>
 </body>
 </html>
