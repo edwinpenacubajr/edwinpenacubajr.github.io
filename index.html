@@ -1211,6 +1211,26 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
   overflow-wrap: normal !important;
 }
 </style>
+<style id="about-outer-services-border-match">
+/* Match Services & Expertise glow ONLY on the outer About Me container. */
+#about .about-grid {
+  border:1px solid rgba(96,137,255,.58) !important;
+  box-shadow:0 0 0 1px rgba(90,126,255,.09),0 0 17px 1px rgba(80,116,255,.16),0 9px 23px rgba(65,83,180,.10),inset 0 1px 0 rgba(255,255,255,.95) !important;
+  transition:border-color .25s ease,box-shadow .25s ease !important;
+}
+#about .about-grid:hover {
+  border-color:#7871fa !important;
+  box-shadow:0 0 0 1px rgba(87,92,255,.24),0 0 28px 5px rgba(74,108,255,.27),0 14px 30px rgba(90,76,190,.17),inset 0 1px 0 #fff !important;
+}
+[data-theme="dark"] #about .about-grid {
+  border-color:rgba(119,155,255,.43) !important;
+  box-shadow:0 0 0 1px rgba(132,163,255,.12),0 0 17px 2px rgba(76,112,255,.15),0 9px 24px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.12) !important;
+}
+[data-theme="dark"] #about .about-grid:hover {
+  border-color:#a0b6ff !important;
+  box-shadow:0 0 0 1px rgba(162,179,255,.32),0 0 28px 5px rgba(93,111,255,.32),0 12px 28px rgba(0,0,0,.28) !important;
+}
+</style>
 </head>
 <body>
 <div class="cursor-glow"></div>
