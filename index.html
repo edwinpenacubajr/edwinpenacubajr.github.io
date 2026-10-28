@@ -550,6 +550,15 @@ section:not(.hero){scroll-margin-top:105px}
 @media(max-width:900px){#projects .cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){#projects .cards{grid-template-columns:1fr;gap:14px}#projects .project:not(.project-featured) .project-content{padding:17px}#projects .project:not(.project-featured) .mini-preview{height:100px}.navlinks a{font-size:15px}}
 </style>
+<style id="petty-cash-card-height-fix">
+/* Prevent the real screenshot from stretching the entire project grid row. */
+#projects .petty-project .petty-preview{display:block;width:100%;height:150px;flex:0 0 150px;overflow:hidden;background:var(--bg-secondary);border-bottom:1px solid var(--border)}
+#projects .petty-project .petty-preview img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .25s ease}
+#projects .petty-project .petty-preview:hover img{transform:scale(1.025)}
+#projects .petty-project .project-content{flex:1;min-height:0}
+@media(max-width:600px){#projects .petty-project .petty-preview{height:165px;flex-basis:165px}}
+@media(prefers-reduced-motion:reduce){#projects .petty-project .petty-preview img{transition:none}}
+</style>
 </head>
 <body>
 
