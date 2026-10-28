@@ -79,6 +79,12 @@ h2{font-size:clamp(28px,3.8vw,39px);letter-spacing:-1.4px}
   .avatar {width:108px;height:108px;}
   .info div {flex-wrap:wrap;row-gap:4px;}
 }
+
+/* Petty Cash Studio project preview */
+#projects .petty-preview{display:block;height:112px;overflow:hidden;background:#e9f2ec;border-bottom:1px solid var(--border)}
+#projects .petty-preview img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 20%;transition:transform .25s ease}
+#projects .petty-preview:hover img{transform:scale(1.035)}
+@media(max-width:580px){#projects .petty-preview{height:135px}}
 </style></noscript>
 <style>
 /* ROOT */
@@ -890,6 +896,8 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <div><a class="project-link" href="https://edwinpenacubaitechbacolod.github.io/bcd-warehouse-eod/" target="_blank" rel="noopener noreferrer">View Live Project ↗</a></div>
 </div>
 </article>
+
+<div class="project reveal petty-project"><a class="petty-preview" href="https://edwinpenacubaitechbacolod.github.io/Petty-Cash-Studio/#export" target="_blank" rel="noopener noreferrer" aria-label="Open Petty Cash Studio live demo"><img src="petty-cash-studio.png" alt="Actual Petty Cash Studio interface showing liquidation details, supporting documents, and expense summaries" loading="lazy"></a><div class="project-content"><div><div class="project-tag">Finance Automation · AI-Assisted</div><h3>Petty Cash Studio</h3><p>A browser-based petty cash workflow for supporting documents, expense entries, and Excel liquidation reports ready for review and printing.</p></div><div><div class="project-tools">HTML / CSS / JavaScript / Excel Export / AI-Assisted</div><div class="project-actions"><a class="project-link" href="https://edwinpenacubaitechbacolod.github.io/Petty-Cash-Studio/#export" target="_blank" rel="noopener noreferrer">View Live Project ↗</a></div></div></div></div>
 
 <div class="project reveal"><div class="mini-preview inventory" aria-label="Illustrative preview of inventory records"><div class="mini-label">Inventory records</div><div class="mini-lines"><span></span><span></span><span></span></div><div class="mini-chips"><i></i><i></i><i></i></div></div><div class="project-content"><div><div class="project-tag">Inventory</div><h3>Inventory Tracking System</h3><p>A structured spreadsheet for monitoring item descriptions, quantities, stock status, checking, and inventory updates.</p></div><div><div class="project-tools">Excel / Warehouse System Reports</div><div class="project-actions"><a class="project-link" href="inventory-process.html" target="_blank" rel="noopener">See My Process ↗</a></div></div></div></div>
 
