@@ -58,6 +58,27 @@ h2{font-size:clamp(28px,3.8vw,39px);letter-spacing:-1.4px}
 @media(min-width:851px){.hero{min-height:auto;padding:112px 20px 58px}.hero-grid{gap:36px}.hero h1{font-size:clamp(38px,4.1vw,55px)} }
 @media(max-width:850px){section{padding:56px 20px}.hero{padding:106px 20px 48px}.hero-grid{gap:28px}.about-grid{gap:24px}.highlight-grid{gap:12px}}
 @media(max-width:600px){section{padding:46px 17px}.section-head{margin-bottom:22px}h2{font-size:clamp(27px,7vw,34px)}.hero{padding:98px 17px 40px}.hero h1{font-size:clamp(33px,9vw,42px)}.cards,.education-grid,.tools-grid{gap:12px}.card,.education-card,.tool-group,.project{padding:18px}.experience{grid-template-columns:1fr;gap:6px;padding:0 0 27px 28px}.highlight{padding:15px 10px}.highlight-number{font-size:24px}.skills{gap:10px}.skill-item{padding:12px}.project{min-height:0}.contact-box{gap:20px}}
+
+/* Profile card emphasis — compact, balanced, responsive */
+@media (min-width: 851px) {
+  .hero-grid {grid-template-columns:minmax(0,1.12fr) minmax(385px,.88fr);gap:34px;}
+  .profile-wrapper {max-width:435px;width:100%;justify-self:end;}
+  .profile-card {padding:29px 30px 27px;}
+  .profile-card h3 {font-size:25px;line-height:1.25;margin-bottom:7px;}
+  .profile-card>p {font-size:14px;line-height:1.55;}
+  .avatar {width:112px;height:112px;margin-bottom:19px;}
+  .info {margin-top:18px;}
+  .info div {font-size:13px;padding:12px 0;align-items:baseline;}
+  .info strong {text-align:right;}
+}
+@media (max-width:850px) {
+  .profile-wrapper {width:min(100%,440px);margin-inline:auto;}
+  .profile-card {padding:25px;}
+  .profile-card h3 {font-size:23px;}
+  .profile-card>p {font-size:14px;line-height:1.5;}
+  .avatar {width:108px;height:108px;}
+  .info div {flex-wrap:wrap;row-gap:4px;}
+}
 </style></noscript>
 <style>
 /* ROOT */
@@ -436,6 +457,43 @@ section:not(.hero){padding-top:58px;padding-bottom:58px;scroll-margin-top:85px}
 @media(max-width:600px){section:not(.hero){padding-top:40px;padding-bottom:40px}.section-head{margin-bottom:19px}.services-cards{grid-template-columns:1fr;gap:12px}.card,.education-card,.tool-group,.project{padding:17px}.featured-visual{max-height:210px}}
 @media(prefers-reduced-motion:reduce){.card{transition:none}}
 </style>
+<style id="featured-project-layout-fix">
+/* Featured project: content-sized layout without oversized blank areas */
+#projects{scroll-margin-top:110px;padding-top:78px}
+#projects .section-head{margin-bottom:18px}
+#projects .project-featured{padding:16px;min-height:0;height:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:22px;border-radius:18px}
+#projects .project-featured .featured-visual{display:block;width:100%;height:auto;min-height:0;max-height:none;aspect-ratio:16/9;object-fit:contain;object-position:center;border-radius:11px;background:var(--bg-secondary)}
+#projects .project-featured .featured-body{padding:0;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:0}
+#projects .project-featured .featured-body p{margin-top:8px;line-height:1.5}
+#projects .project-featured .featured-tags{margin:12px 0 2px;gap:6px}
+#projects .project-featured .featured-tags span{padding:4px 8px;font-size:10px}
+#projects .project-featured .project-link{margin-top:12px}
+@media(max-width:750px){#projects{padding-top:68px;scroll-margin-top:92px}#projects .project-featured{grid-template-columns:minmax(0,1fr);gap:14px;padding:14px}#projects .project-featured .featured-visual{aspect-ratio:auto;max-height:260px;object-fit:contain}#projects .project-featured .featured-body{padding:0}}
+</style>
+<style id="compact-project-previews">
+#projects .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch}
+#projects .project-featured{grid-column:1/-1}
+#projects .project:not(.project-featured){padding:0;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+#projects .project:not(.project-featured) .project-content{height:auto;flex:1;padding:15px;gap:12px}
+#projects .project:not(.project-featured) h3{font-size:16px;line-height:1.3;margin:6px 0}
+#projects .project:not(.project-featured) p{font-size:12px;line-height:1.5;margin:0}
+#projects .project:not(.project-featured) .project-tools{font-size:11px;margin-bottom:8px}
+#projects .project:not(.project-featured) .project-link{font-size:11px;margin:3px 5px 3px 0}
+#projects .mini-preview{height:112px;overflow:hidden;position:relative;padding:14px;background:linear-gradient(135deg,#102d44,#155b70);color:#e8f6ff;border-bottom:1px solid var(--border)}
+#projects .mini-preview .mini-label{font-size:9px;font-weight:800;letter-spacing:1.2px;opacity:.8;text-transform:uppercase;margin-bottom:9px}
+#projects .mini-preview .mini-lines{display:grid;gap:6px}
+#projects .mini-preview .mini-lines span{display:block;height:9px;border-radius:4px;background:rgba(255,255,255,.18)}
+#projects .mini-preview .mini-lines span:nth-child(2){width:80%}#projects .mini-preview .mini-lines span:nth-child(3){width:60%}
+#projects .mini-preview .mini-chips{display:flex;gap:5px;margin-top:10px}#projects .mini-preview .mini-chips i{display:block;width:28px;height:12px;border-radius:4px;background:#49c9bb}
+#projects .mini-preview.inventory{background:linear-gradient(135deg,#123f54,#247a7a)}
+#projects .mini-preview.logistics{background:linear-gradient(135deg,#19345d,#426ab4)}
+#projects .mini-preview.research{background:linear-gradient(135deg,#3b285e,#6553a2)}
+#projects .mini-preview.support{background:linear-gradient(135deg,#29445a,#357a93)}
+#projects .mini-preview.website{background:linear-gradient(135deg,#172a49,#364fc0)}
+#projects .mini-preview:after{content:'Illustrative preview';position:absolute;bottom:7px;right:10px;font-size:9px;opacity:.68}
+@media(max-width:850px){#projects .cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){#projects .cards{grid-template-columns:minmax(0,1fr)}#projects .mini-preview{height:95px}#projects .project-featured{grid-column:1}}
+</style>
 </head>
 <body>
 
@@ -491,11 +549,11 @@ I bring a practical, detail-oriented approach to organizing information, managin
 <div class="profile-card" id="profileCard">
 <div class="avatar"><img src="profile.jpg" alt="Photo of Edwin Peñacuba Jr." width="120" height="120"><i class="avatar-dot"></i></div>
 <h3>Edwin Peñacuba Jr.</h3>
-<p>Entry-Level Virtual Assistant | Admin, Data Entry, Customer Support, E-Commerce & Inventory</p>
+<p>Virtual Assistant | E-commerce & Digital Operations</p>
 <div class="info">
 <div><span>Location</span><strong>Bacolod City, Philippines</strong></div>
 <div><span>Current Role</span><strong>Warehouse & Logistics Supervisor</strong></div>
-<div><span>Experience</span><strong>Operations & Customer Service</strong></div>
+<div><span>Expertise</span><strong>Inventory, Data Entry & E-commerce</strong></div>
 <div><span>Languages</span><strong>English • Tagalog • Hiligaynon</strong></div>
 </div>
 </div>
@@ -783,18 +841,18 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 </div>
 </article>
 
-<div class="project reveal"><div class="project-content"><div><div class="project-tag">Inventory</div><h3>Inventory Tracking System</h3><p>A structured spreadsheet for monitoring item descriptions, quantities, stock status, checking, and inventory updates.</p></div><div><div class="project-tools">Excel / Warehouse System Reports</div><a class="project-link" href="inventory-process.html" target="_blank" rel="noopener">See My Process ↗</a></div></div></div>
+<div class="project reveal"><div class="mini-preview inventory" aria-label="Illustrative preview of inventory records"><div class="mini-label">Inventory records</div><div class="mini-lines"><span></span><span></span><span></span></div><div class="mini-chips"><i></i><i></i><i></i></div></div><div class="project-content"><div><div class="project-tag">Inventory</div><h3>Inventory Tracking System</h3><p>A structured spreadsheet for monitoring item descriptions, quantities, stock status, checking, and inventory updates.</p></div><div><div class="project-tools">Excel / Warehouse System Reports</div><a class="project-link" href="inventory-process.html" target="_blank" rel="noopener">See My Process ↗</a></div></div></div>
 
-<div class="project reveal"><div class="project-content"><div><div class="project-tag">Logistics</div><h3>Warehouse Operations Tracker</h3><p>A practical tracking and reporting format for receiving, deliveries, item verification, discrepancies, and daily operational concerns.</p></div><div><div class="project-tools">Excel / Google Sheets / Streamlit</div><a class="project-link" href="https://bacolod-warehouse-monitoring-it2drdk7mjh3maaboxe3zf.streamlit.app/" target="_blank" rel="noopener noreferrer">View Live Sample ↗</a>
+<div class="project reveal"><div class="mini-preview logistics" aria-label="Illustrative preview of delivery monitoring"><div class="mini-label">Delivery monitoring</div><div class="mini-lines"><span></span><span></span><span></span></div><div class="mini-chips"><i></i><i></i><i></i></div></div><div class="project-content"><div><div class="project-tag">Logistics</div><h3>Warehouse Operations Tracker</h3><p>A practical tracking and reporting format for receiving, deliveries, item verification, discrepancies, and daily operational concerns.</p></div><div><div class="project-tools">Excel / Google Sheets / Streamlit</div><a class="project-link" href="https://bacolod-warehouse-monitoring-it2drdk7mjh3maaboxe3zf.streamlit.app/" target="_blank" rel="noopener noreferrer">View Live Sample ↗</a>
 <a class="project-link" href="https://docs.google.com/spreadsheets/d/1epIWQ5NT4NFiLwPAIIWgnkEQDD4X-CtYkVmr3JDK0B0/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer">View Delivery Sheet ↗</a></div></div></div>
 
-<div class="project reveal"><div class="project-content"><div><div class="project-tag">Research</div><h3>Product & Logistics Research</h3><p>Organized research containing product information, service details, providers, locations, schedules, and comparisons. Includes a live Shopify Listing Studio work sample.</p></div><div><div class="project-tools">Web Research / Excel / Streamlit</div><a class="project-link" href="https://shopify-listing-studio-cqlmdmdkjgabddngxwebzd.streamlit.app/#bring-in-your-products" target="_blank" rel="noopener noreferrer">View Live Sample ↗</a></div></div></div>
+<div class="project reveal"><div class="mini-preview research" aria-label="Illustrative preview of product research"><div class="mini-label">Product research</div><div class="mini-lines"><span></span><span></span><span></span></div><div class="mini-chips"><i></i><i></i><i></i></div></div><div class="project-content"><div><div class="project-tag">Research</div><h3>Product & Logistics Research</h3><p>Organized research containing product information, service details, providers, locations, schedules, and comparisons. Includes a live Shopify Listing Studio work sample.</p></div><div><div class="project-tools">Web Research / Excel / Streamlit</div><a class="project-link" href="https://shopify-listing-studio-cqlmdmdkjgabddngxwebzd.streamlit.app/#bring-in-your-products" target="_blank" rel="noopener noreferrer">View Live Sample ↗</a></div></div></div>
 
 
-<div class="project reveal"><div class="project-content"><div><div class="project-tag">Customer Service</div><h3>Customer Support Workflow</h3><p>A simple workflow for handling customer inquiries, recording concerns, providing updates, and following up professionally.</p></div><div><div class="project-tools">Communication / CRM Concepts</div><a class="project-link" href="customer-support-workflow.html" target="_blank" rel="noopener">View Sample ↗</a>
+<div class="project reveal"><div class="mini-preview support" aria-label="Illustrative preview of workflow stages"><div class="mini-label">Workflow stages</div><div class="mini-lines"><span></span><span></span><span></span></div><div class="mini-chips"><i></i><i></i><i></i></div></div><div class="project-content"><div><div class="project-tag">Customer Service</div><h3>Customer Support Workflow</h3><p>A simple workflow for handling customer inquiries, recording concerns, providing updates, and following up professionally.</p></div><div><div class="project-tools">Communication / CRM Concepts</div><a class="project-link" href="customer-support-workflow.html" target="_blank" rel="noopener">View Sample ↗</a>
 <a class="project-link" href="https://trello.com/b/g9Oexd9y/customer-support-workflow" target="_blank" rel="noopener noreferrer">View Trello Board ↗</a></div></div></div>
 
-<div class="project reveal"><div class="project-content"><div><div class="project-tag">Web</div><h3>Personal Portfolio Website</h3><p>A responsive personal portfolio showcasing professional experience, technical skills, services, projects, and contact information.</p></div><div><div class="project-tools">HTML / CSS / JavaScript / GitHub Pages</div><a class="project-link" href="https://edwinpenacubajr.github.io/" target="_blank" rel="noopener noreferrer">View Live Site ↗</a></div></div></div>
+<div class="project reveal"><div class="mini-preview website" aria-label="Illustrative preview of responsive website"><div class="mini-label">Responsive website</div><div class="mini-lines"><span></span><span></span><span></span></div><div class="mini-chips"><i></i><i></i><i></i></div></div><div class="project-content"><div><div class="project-tag">Web</div><h3>Personal Portfolio Website</h3><p>A responsive personal portfolio showcasing professional experience, technical skills, services, projects, and contact information.</p></div><div><div class="project-tools">HTML / CSS / JavaScript / GitHub Pages</div><a class="project-link" href="https://edwinpenacubajr.github.io/" target="_blank" rel="noopener noreferrer">View Live Site ↗</a></div></div></div>
 
 </div>
 </div>
