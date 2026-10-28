@@ -643,6 +643,39 @@ body{background:var(--bg)!important}
 @media(max-width:650px){#skills .skill-item.has-inner-network > .inner-network-lines{opacity:.37!important}}
 @media(prefers-reduced-motion:reduce){#skills .skill-item.has-inner-network > .inner-network-lines{animation:none!important}}
 </style>
+<style id="stats-visibility-only-2026">
+/* Higher contrast, with the original sizes and layout retained. */
+.highlight{background:rgba(255,255,255,.91);border-color:rgba(100,116,139,.32)}
+.highlight p{color:#334155;font-weight:750;position:relative;z-index:3}
+.highlight-number{background:none!important;-webkit-text-fill-color:#4338ca!important;color:#4338ca!important;position:relative;z-index:3}
+.highlight-ico{position:relative;z-index:3;background:#eaf1ff}
+.highlight.has-inner-network>.inner-network-lines{opacity:.32!important}
+[data-theme="dark"] .highlight{background:rgba(15,23,42,.96);border-color:rgba(148,163,184,.4)}
+[data-theme="dark"] .highlight p{color:#e2e8f0}
+[data-theme="dark"] .highlight-number{color:#a5b4fc!important;-webkit-text-fill-color:#a5b4fc!important}
+[data-theme="dark"] .highlight-ico{background:#24365b}
+[data-theme="dark"] .highlight.has-inner-network>.inner-network-lines{opacity:.38!important}
+</style>
+<style id="compact-stat-cards-2026">
+/* Compact stats: preserve moving network and strong contrast. */
+.highlight-grid{gap:13px;margin-top:22px;align-items:stretch}
+.highlight-grid .highlight{height:135px;min-height:135px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-radius:16px}
+.highlight-grid .highlight-ico{width:34px;height:34px;margin:0;font-size:19px;border-radius:10px;display:grid;place-items:center;flex:none}
+.highlight-grid .highlight-number{font-size:31px;line-height:1.05;margin:0;flex:none}
+.highlight-grid .highlight p{font-size:13px;line-height:1.25;margin:0;font-weight:750;max-width:100%;text-wrap:balance}
+.highlight-grid .highlight.has-inner-network>.inner-network-lines{opacity:.32!important}
+[data-theme="dark"] .highlight-grid .highlight.has-inner-network>.inner-network-lines{opacity:.38!important}
+@media(max-width:850px){.highlight-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+@media(max-width:480px){.highlight-grid .highlight{height:128px;min-height:128px;padding:10px 7px}.highlight-grid .highlight p{font-size:12px}.highlight-grid .highlight-number{font-size:29px}}
+</style>
+<style id="stats-dark-soft-contrast-2026">
+/* Softer dark-mode statistics without reducing text contrast or hiding network lines. */
+[data-theme="dark"] .highlight-grid .highlight{background:rgba(30,45,75,.94);border-color:rgba(147,177,232,.48)}
+[data-theme="dark"] .highlight-grid .highlight p{color:#f8fafc!important;text-shadow:0 1px 2px rgba(2,6,23,.45)}
+[data-theme="dark"] .highlight-grid .highlight-number{color:#c7d2fe!important;-webkit-text-fill-color:#c7d2fe!important}
+[data-theme="dark"] .highlight-grid .highlight-ico{background:#354b77}
+[data-theme="dark"] .highlight-grid .highlight.has-inner-network>.inner-network-lines{opacity:.32!important}
+</style>
 </head>
 <body>
 
@@ -1243,7 +1276,7 @@ document.querySelector("footer").innerHTML =
 
 <script id="card-network-visible-init">
 (function(){
-  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="320" height="210" viewBox="0 0 320 210"><g fill="none" stroke="#3981ff" stroke-width="1.15"><path d="M-20 33L65 13 140 68 228 10 330 47M-20 33L38 131 140 68 190 170 330 47M38 131L-10 210 190 170 272 205 330 130M65 13L38 131 190 170 228 10 330 130M140 68L272 205 330 47M-10 210L140 68 330 130"/></g></svg>';
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="320" height="210" viewBox="0 0 320 210"><g fill="none" stroke="#3981ff" stroke-width="1.15"><path d="M-266 -53l-17 11 M-266 157l-17 11 M-266 367l-17 11 M54 -53l-17 11 M54 157l-17 11 M54 367l-17 11 M374 -53l-17 11 M374 157l-17 11 M374 367l-17 11 M-266 -53l28 -16 M-266 157l28 -16 M-266 367l28 -16 M54 -53l28 -16 M54 157l28 -16 M54 367l28 -16 M374 -53l28 -16 M374 157l28 -16 M374 367l28 -16 M-266 -53l-49 9 M-266 157l-49 9 M-266 367l-49 9 M54 -53l-49 9 M54 157l-49 9 M54 367l-49 9 M374 -53l-49 9 M374 157l-49 9 M374 367l-49 9 M-51 -147l-39 14 M-51 63l-39 14 M-51 273l-39 14 M269 -147l-39 14 M269 63l-39 14 M269 273l-39 14 M589 -147l-39 14 M589 63l-39 14 M589 273l-39 14 M-51 -147l-66 37 M-51 63l-66 37 M-51 273l-66 37 M269 -147l-66 37 M269 63l-66 37 M269 273l-66 37 M589 -147l-66 37 M589 63l-66 37 M589 273l-66 37 M-51 -147l-5 -25 M-51 63l-5 -25 M-51 273l-5 -25 M269 -147l-5 -25 M269 63l-5 -25 M269 273l-5 -25 M589 -147l-5 -25 M589 63l-5 -25 M589 273l-5 -25 M-51 -147l35 23 M-51 63l35 23 M-51 273l35 23 M269 -147l35 23 M269 63l35 23 M269 273l35 23 M589 -147l35 23 M589 63l35 23 M589 273l35 23 M-182 -22l45 18 M-182 188l45 18 M-182 398l45 18 M138 -22l45 18 M138 188l45 18 M138 398l45 18 M458 -22l45 18 M458 188l45 18 M458 398l45 18 M-182 -22l-56 -47 M-182 188l-56 -47 M-182 398l-56 -47 M138 -22l-56 -47 M138 188l-56 -47 M138 398l-56 -47 M458 -22l-56 -47 M458 188l-56 -47 M458 398l-56 -47 M-182 -22l2 64 M-182 188l2 64 M-182 398l2 64 M138 -22l2 64 M138 188l2 64 M138 398l2 64 M458 -22l2 64 M458 188l2 64 M458 398l2 64 M-190 -136l-70 -7 M-190 74l-70 -7 M-190 284l-70 -7 M130 -136l-70 -7 M130 74l-70 -7 M130 284l-70 -7 M450 -136l-70 -7 M450 74l-70 -7 M450 284l-70 -7 M-190 -136l-16 6 M-190 74l-16 6 M-190 284l-16 6 M130 -136l-16 6 M130 74l-16 6 M130 284l-16 6 M450 -136l-16 6 M450 74l-16 6 M450 284l-16 6 M-190 -136l3 18 M-190 74l3 18 M-190 284l3 18 M130 -136l3 18 M130 74l3 18 M130 284l3 18 M450 -136l3 18 M450 74l3 18 M450 284l3 18 M-190 -136l10 -32 M-190 74l10 -32 M-190 284l10 -32 M130 -136l10 -32 M130 74l10 -32 M130 284l10 -32 M450 -136l10 -32 M450 74l10 -32 M450 284l10 -32 M-283 -42l45 -27 M-283 168l45 -27 M-283 378l45 -27 M37 -42l45 -27 M37 168l45 -27 M37 378l45 -27 M357 -42l45 -27 M357 168l45 -27 M357 378l45 -27 M-283 -42l-32 -2 M-283 168l-32 -2 M-283 378l-32 -2 M37 -42l-32 -2 M37 168l-32 -2 M37 378l-32 -2 M357 -42l-32 -2 M357 168l-32 -2 M357 378l-32 -2 M-283 -42l-2 73 M-283 168l-2 73 M-283 378l-2 73 M37 -42l-2 73 M37 168l-2 73 M37 378l-2 73 M357 -42l-2 73 M357 168l-2 73 M357 378l-2 73 M-90 -133l-27 23 M-90 77l-27 23 M-90 287l-27 23 M230 -133l-27 23 M230 77l-27 23 M230 287l-27 23 M550 -133l-27 23 M550 77l-27 23 M550 287l-27 23 M-90 -133l34 -39 M-90 77l34 -39 M-90 287l34 -39 M230 -133l34 -39 M230 77l34 -39 M230 287l34 -39 M550 -133l34 -39 M550 77l34 -39 M550 287l34 -39 M-90 -133l74 9 M-90 77l74 9 M-90 287l74 9 M230 -133l74 9 M230 77l74 9 M230 287l74 9 M550 -133l74 9 M550 77l74 9 M550 287l74 9 M-82 -35l-35 -75 M-82 175l-35 -75 M-82 385l-35 -75 M238 -35l-35 -75 M238 175l-35 -75 M238 385l-35 -75 M558 -35l-35 -75 M558 175l-35 -75 M558 385l-35 -75 M-82 -35l-55 31 M-82 175l-55 31 M-82 385l-55 31 M238 -35l-55 31 M238 175l-55 31 M238 385l-55 31 M558 -35l-55 31 M558 175l-55 31 M558 385l-55 31 M-82 -35l26 73 M-82 175l26 73 M-82 385l26 73 M238 -35l26 73 M238 175l26 73 M238 385l26 73 M558 -35l26 73 M558 175l26 73 M558 385l26 73 M-117 -110l-70 -8 M-117 100l-70 -8 M-117 310l-70 -8 M203 -110l-70 -8 M203 100l-70 -8 M203 310l-70 -8 M523 -110l-70 -8 M523 100l-70 -8 M523 310l-70 -8 M-260 -143l54 13 M-260 67l54 13 M-260 277l54 13 M60 -143l54 13 M60 67l54 13 M60 277l54 13 M380 -143l54 13 M380 67l54 13 M380 277l54 13 M-260 -143l-25 -36 M-260 67l-25 -36 M-260 277l-25 -36 M60 -143l-25 -36 M60 67l-25 -36 M60 277l-25 -36 M380 -143l-25 -36 M380 67l-25 -36 M380 277l-25 -36 M-206 -130l19 12 M-206 80l19 12 M-206 290l19 12 M114 -130l19 12 M114 80l19 12 M114 290l19 12 M434 -130l19 12 M434 80l19 12 M434 290l19 12 M-206 -130l-32 61 M-206 80l-32 61 M-206 290l-32 61 M114 -130l-32 61 M114 80l-32 61 M114 290l-32 61 M434 -130l-32 61 M434 80l-32 61 M434 290l-32 61 M-206 -130l26 -38 M-206 80l26 -38 M-206 290l26 -38 M114 -130l26 -38 M114 80l26 -38 M114 290l26 -38 M434 -130l26 -38 M434 80l26 -38 M434 290l26 -38 M-137 -4l-43 46 M-137 206l-43 46 M-137 416l-43 46 M183 -4l-43 46 M183 206l-43 46 M183 416l-43 46 M503 -4l-43 46 M503 206l-43 46 M503 416l-43 46 M-187 -118l7 -50 M-187 92l7 -50 M-187 302l7 -50 M133 -118l7 -50 M133 92l7 -50 M133 302l7 -50 M453 -118l7 -50 M453 92l7 -50 M453 302l7 -50 M-56 -172l40 48 M-56 38l40 48 M-56 248l40 48 M264 -172l40 48 M264 38l40 48 M264 248l40 48 M584 -172l40 48 M584 38l40 48 M584 248l40 48 M-315 -44l30 75 M-315 166l30 75 M-315 376l30 75 M5 -44l30 75 M5 166l30 75 M5 376l30 75 M325 -44l30 75 M325 166l30 75 M325 376l30 75 M-285 -179l-51 55 M-285 31l-51 55 M-285 241l-51 55 M35 -179l-51 55 M35 31l-51 55 M35 241l-51 55 M355 -179l-51 55 M355 31l-51 55 M355 241l-51 55"/></g></svg>';
   const uri='url("data:image/svg+xml,'+encodeURIComponent(svg)+'")';
   const selector=['.profile-card','#about .about-grid','#services .card','#experience .experience','#education .education-card','#skills .skill-item','#skills .card','#skills .tool-group','.highlight','#projects .project','#contact .contact-box'];
   document.querySelectorAll(selector.join(',')).forEach((box)=>{
