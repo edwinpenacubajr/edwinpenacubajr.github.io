@@ -1231,6 +1231,38 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
   box-shadow:0 0 0 1px rgba(162,179,255,.32),0 0 28px 5px rgba(93,111,255,.32),0 12px 28px rgba(0,0,0,.28) !important;
 }
 </style>
+<style id="petty-image-outline-final">
+/* Visible outline around the Petty Cash Studio screenshot only. */
+#projects .petty-project .petty-preview {
+  border: 3px solid #60a5fa !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 0 2px rgba(37,99,235,.12), 0 0 15px rgba(37,99,235,.22) !important;
+  overflow: hidden;
+}
+[data-theme="dark"] #projects .petty-project .petty-preview {
+  border-color: #93c5fd !important;
+  box-shadow: 0 0 0 2px rgba(147,197,253,.18), 0 0 18px rgba(96,165,250,.3) !important;
+}
+</style>
+<style id="eod-image-frame-border">
+/* Border around the EOD screenshot only; preserves the outer project card. */
+#projects .project-featured .featured-visual {
+  border: 2px solid #79aaff !important;
+  border-radius: 13px !important;
+  box-shadow: 0 0 0 1px rgba(96,165,250,.18), 0 0 15px rgba(59,130,246,.24) !important;
+  box-sizing: border-box;
+}
+[data-theme="dark"] #projects .project-featured .featured-visual {
+  border-color: #82b4ff !important;
+  box-shadow: 0 0 0 1px rgba(96,165,250,.25), 0 0 18px rgba(59,130,246,.35) !important;
+}
+</style>
+<style id="profile-card-border-restored">
+/* Thin blue outline and soft glow, matching the Download Resume button. */
+.profile-card{isolation:isolate;overflow:visible;border:1px solid #6695ff !important;box-shadow:0 0 0 1px rgba(96,165,250,.10),0 7px 25px rgba(65,105,255,.22) !important;}
+.profile-card::after{content:none !important;animation:none !important;}
+[data-theme="dark"] .profile-card{border-color:#78a5ff !important;box-shadow:0 0 0 1px rgba(96,165,250,.12),0 7px 25px rgba(65,105,255,.28) !important;}
+</style>
 </head>
 <body>
 <div class="cursor-glow"></div>
