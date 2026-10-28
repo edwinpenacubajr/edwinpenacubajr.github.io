@@ -1285,6 +1285,28 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
 @media (min-width:851px){.profile-card{min-height:490px;display:flex;flex-direction:column;justify-content:center}}
 @media (max-width:850px){.profile-card{min-height:470px;display:flex;flex-direction:column;justify-content:center}}
 </style>
+<style id="petty-preview-match-other-cards-final">
+/* Match the inset screenshot frame used by Inventory and Warehouse Tracker. */
+#projects .project.petty-project { padding: 8px !important; }
+#projects .project.petty-project .petty-preview {
+  width: 100% !important;
+  height: 178px !important;
+  flex: 0 0 178px !important;
+  border: 1px solid #7fa8ff !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+#projects .project.petty-project .petty-preview img {
+  width: 100% !important; height: 100% !important;
+  object-fit: cover !important; object-position: center top !important;
+  border-radius: 11px !important;
+}
+#projects .project.petty-project .project-content { padding: 15px 10px 10px !important; }
+[data-theme="dark"] #projects .project.petty-project .petty-preview { border-color: #7fa8ff !important; }
+@media(max-width:600px) {#projects .project.petty-project .petty-preview {height:178px !important;flex-basis:178px !important;}}
+</style>
 </head>
 <body>
 <div class="cursor-glow"></div>
