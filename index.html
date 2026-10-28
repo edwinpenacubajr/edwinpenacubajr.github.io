@@ -772,6 +772,87 @@ nav .nav-hire:hover,nav .nav-hire:focus-visible{
   color:#fff;background:rgba(80,119,209,.82);border-color:#c5dcff;
 }
 </style>
+<style id="experience-crystal-refresh">
+/* Scoped experience refresh: existing network motion and scripts remain intact */
+#experience .timeline{display:grid;gap:18px;padding-left:24px}
+#experience .timeline::before{left:7px;top:18px;bottom:18px;width:2px;background:linear-gradient(180deg,var(--blue),rgba(96,165,250,.18))}
+#experience .experience{display:grid;grid-template-columns:minmax(155px,185px) minmax(0,1fr);gap:22px;padding:25px 28px;margin:0;border:1px solid var(--border);border-radius:19px;background:rgba(255,255,255,.76);-webkit-backdrop-filter:blur(22px) saturate(145%);backdrop-filter:blur(22px) saturate(145%);box-shadow:0 8px 26px rgba(15,23,42,.045);transition:border-color .25s,box-shadow .25s,transform .25s}
+#experience .experience::before{left:-23px;top:29px;width:13px;height:13px;border:3px solid var(--bg);box-shadow:0 0 0 3px rgba(37,99,235,.18);z-index:4}
+#experience .experience:hover{transform:translateY(-3px);border-color:rgba(37,99,235,.38);box-shadow:0 15px 36px rgba(37,99,235,.10)}
+#experience .experience .date{align-self:start;justify-self:start;display:inline-flex;align-items:center;padding:8px 12px;border:1px solid rgba(37,99,235,.17);border-radius:999px;background:rgba(239,246,255,.90);color:#1d4ed8;font-size:12px;line-height:1.4;white-space:normal}
+#experience .experience h3{font-size:clamp(18px,2vw,21px);line-height:1.3;letter-spacing:-.35px;color:var(--text)}
+#experience .experience .company{font-weight:700;color:var(--blue);font-size:13px;margin-top:6px}
+#experience .experience p{font-size:12px;line-height:1.6;margin-top:6px;color:var(--muted)}
+#experience .experience ul{font-size:13px;line-height:1.65;margin-top:13px;padding-left:18px;color:var(--text)}
+#experience .experience li{padding-left:2px;margin-bottom:5px}
+#experience .experience li::marker{color:var(--blue)}
+#experience .exp-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+#experience .exp-tags span{display:inline-flex;padding:5px 10px;border:1px solid rgba(37,99,235,.14);border-radius:8px;background:rgba(239,246,255,.78);color:#1d4ed8;font-size:11px;font-weight:700;line-height:1.4}
+#experience .has-inner-network>.inner-network-lines{opacity:.13!important}
+[data-theme="dark"] #experience .experience{background:rgba(15,23,42,.76);box-shadow:0 8px 26px rgba(0,0,0,.14)}
+[data-theme="dark"] #experience .experience .date,[data-theme="dark"] #experience .exp-tags span{background:rgba(37,99,235,.16);color:#bfdbfe;border-color:rgba(147,197,253,.22)}
+[data-theme="dark"] #experience .has-inner-network>.inner-network-lines{opacity:.19!important}
+@media(max-width:700px){#experience .timeline{padding-left:21px;gap:14px}#experience .timeline::before{left:6px}#experience .experience{grid-template-columns:1fr;gap:10px;padding:20px 18px}#experience .experience::before{left:-20px;top:25px}#experience .experience .date{font-size:11px}#experience .experience ul{font-size:13px}}
+@media(prefers-reduced-motion:reduce){#experience .experience:hover{transform:none}}
+</style>
+<style id="education-crystal-refinement-2026">
+/* Education: content-sized glass cards, no certificate flip */
+#education .education-grid{align-items:start;gap:16px}
+#education .education-card{position:relative;isolation:isolate;overflow:hidden;padding:23px;border-radius:19px;background:linear-gradient(135deg,rgba(255,255,255,.88),rgba(242,247,255,.78));border:1px solid rgba(95,143,228,.28);box-shadow:0 8px 28px rgba(30,64,125,.055);backdrop-filter:blur(18px) saturate(145%);-webkit-backdrop-filter:blur(18px) saturate(145%);transition:border-color .25s,box-shadow .25s,transform .25s}
+[data-theme="dark"] #education .education-card{background:linear-gradient(135deg,rgba(18,30,55,.92),rgba(9,18,38,.88));border-color:rgba(125,169,255,.25);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+#education .education-card:hover{border-color:rgba(65,121,240,.55);box-shadow:0 16px 36px rgba(37,99,235,.11);transform:translateY(-3px)}
+#education .education-card h3{font-size:18px;line-height:1.35;margin:12px 0 6px;letter-spacing:-.25px}
+#education .education-icon{margin:0;width:43px;height:43px;border-radius:13px;background:rgba(37,99,235,.09);display:grid;place-items:center}
+#education .school{font-size:13px;line-height:1.5}
+#education .date-small{font-size:12px;margin-top:6px}
+#education .education-card p{font-size:13px;line-height:1.6;margin-top:9px}
+#education .training-list{margin-top:13px;padding-left:18px}
+#education .training-list li{font-size:12.5px;line-height:1.6;margin-bottom:7px}
+#education .edu-category{position:absolute;top:25px;right:22px;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border:1px solid var(--border);padding:5px 9px;border-radius:30px}
+#education .edu-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}
+#education .edu-tags span{padding:6px 9px;border-radius:8px;background:var(--blue-soft);border:1px solid var(--border);font-size:11px;font-weight:650;color:var(--text)}
+#education .edu-competencies{list-style:none;padding:0;margin:15px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#education .edu-competencies li{font-size:12px;line-height:1.4;padding:10px 9px;border-radius:9px;background:var(--blue-soft);border:1px solid var(--border);color:var(--text);display:flex;align-items:center;gap:7px}
+#education .edu-competencies li::before{content:'✓';color:var(--blue);font-weight:900}
+#education .flip{min-width:0;align-self:start}
+#education .flip-inner{height:auto}
+#education .flip .education-card:hover{transform:none}
+#education .flip-hint{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border:1px solid rgba(37,99,235,.3);background:var(--blue-soft);border-radius:10px;font-size:12px;margin-top:14px}
+#education .flip-back{height:100%;min-height:100%;padding:20px}
+#education .flip-back img{max-height:calc(100% - 55px)}
+@media(max-width:650px){#education .education-grid{grid-template-columns:minmax(0,1fr);gap:13px}#education .education-card{padding:19px}#education .edu-category{top:20px;right:18px}#education .edu-competencies{gap:7px}}
+</style>
+<style id="project-visible-borders-2026">
+/* Clear, consistent frames for every Projects card and preview. */
+#projects .project,
+#projects .project:not(.project-featured),
+#projects .project-featured {
+  border: 2px solid #9abcf7 !important;
+  border-radius: 18px;
+  box-shadow: 0 3px 14px rgba(37,99,235,.09);
+}
+#projects .project:hover {
+  border-color: #2563eb !important;
+  box-shadow: 0 12px 28px rgba(37,99,235,.16);
+}
+#projects .project:not(.project-featured) .mini-preview,
+#projects .project:not(.project-featured) .petty-preview {
+  border-bottom: 2px solid #9abcf7 !important;
+}
+#projects .project:not(.project-featured) .petty-preview {
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-radius: 0 !important;
+}
+[data-theme="dark"] #projects .project {
+  border-color: #648dd4 !important;
+  box-shadow: 0 3px 18px rgba(0,0,0,.22);
+}
+[data-theme="dark"] #projects .project:hover {border-color:#93c5fd !important}
+[data-theme="dark"] #projects .project:not(.project-featured) .mini-preview,
+[data-theme="dark"] #projects .project:not(.project-featured) .petty-preview {border-bottom-color:#648dd4 !important}
+</style>
 </head>
 <body>
 
@@ -898,7 +979,7 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <div class="section-head reveal">
 <div class="eyebrow">Career Background</div>
 <h2>Professional Experience</h2>
-<p>Experience across logistics, warehouse operations, technology sales, and customer service.</p>
+<p>Experience in warehouse leadership, inventory management, logistics, technology sales, and business operations.</p>
 </div>
 
 <div class="timeline">
@@ -916,6 +997,7 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <li>Monitoring operational concerns and discrepancies.</li>
 <li>Maintaining accurate records and organized warehouse information.</li>
 </ul>
+<div class="exp-tags"><span>Team Leadership</span><span>Inventory Management</span><span>Logistics</span><span>Documentation</span></div>
 </div>
 </div>
 
@@ -931,6 +1013,7 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <li>Supported sales operations and daily store activities.</li>
 <li>Developed strong communication, product knowledge, and problem-solving skills.</li>
 </ul>
+<div class="exp-tags"><span>Sales Operations</span><span>Product Knowledge</span><span>Store Operations</span></div>
 </div>
 </div>
 
@@ -945,6 +1028,7 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <li>Handled customer concerns and inquiries.</li>
 <li>Developed communication, listening, and problem-solving skills.</li>
 </ul>
+<div class="exp-tags"><span>Communication</span><span>Issue Resolution</span><span>Documentation</span></div>
 </div>
 </div>
 
@@ -963,17 +1047,15 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <div class="education-grid">
 
 <div class="education-card reveal">
-<div class="education-icon">🎓</div>
+<div class="education-icon">🎓</div><span class="edu-category">Education</span>
 <h3>Associate in Computer Technology</h3>
 <div class="school">Bacolod City College</div>
 <div class="date-small">School Year 2018–2019</div>
-<p>Bacolod City, Negros Occidental, Philippines</p>
+<p>Bacolod City, Negros Occidental, Philippines</p><div class="edu-tags"><span>Computer Technology</span><span>Technical Knowledge</span></div>
 </div>
 
-<div class="flip reveal" id="flipCmo" role="button" tabindex="0" aria-pressed="false" aria-label="Flip card to view the certificate">
-<div class="flip-inner">
-<div class="education-card flip-front">
-<div class="education-icon">📈</div>
+<div class="education-card reveal">
+<div class="education-icon">📈</div><span class="edu-category">Training</span>
 <h3>Sectoral Concerns & Price Monitoring Unit</h3>
 <div class="school">CMO-PMU</div>
 <div class="date-small">Office of the City Mayor — Bacolod City</div>
@@ -984,18 +1066,11 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <li>Consolidated data and assisted in preparing reports, summaries and records while ensuring timely submission.</li>
 <li>Prepared and maintained proper file organization and documentation.</li>
 </ul>
-<div class="flip-hint">Click to view certificate ↻</div>
-</div>
-<div class="education-card flip-back">
-<img src="certificates/cmo-pmu-certificate.jpg" alt="Certificate of training, CMO-PMU, Office of the City Mayor, Bacolod City">
-<p class="cert-missing" hidden>Certificate image will be added soon.</p>
-<div class="flip-hint">Click to flip back ↻</div>
-</div>
-</div>
+
 </div>
 
 <div class="education-card reveal">
-<div class="education-icon">🗣️</div>
+<div class="education-icon">🗣️</div><span class="edu-category">Training</span>
 <h3>English Proficiency and Advance Call Center Training Program</h3>
 <div class="school">Industrial Advancement Academy of the Philippines (IAAP)</div>
 <div class="date-small">112 Hours • February 2017</div>
@@ -1008,9 +1083,9 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 </div>
 
 <div class="education-card reveal">
-<div class="education-icon">⭐</div>
+<div class="education-icon">⭐</div><span class="edu-category">Strengths</span>
 <h3>Core Competencies</h3>
-<ul class="training-list">
+<ul class="edu-competencies">
 <li>Management & Leadership</li>
 <li>Creativity</li>
 <li>Adaptability & Flexibility</li>
@@ -1342,23 +1417,6 @@ window.addEventListener("scroll", () => {
 const mainNav = document.querySelector("nav");
 window.addEventListener("scroll", () => {
     mainNav.classList.toggle("scrolled", window.scrollY > 40);
-});
-
-/* FLIP CARDS (certificates) */
-document.querySelectorAll(".flip").forEach(card => {
-    const toggle = () => {
-        const on = card.classList.toggle("flipped");
-        card.setAttribute("aria-pressed", on);
-    };
-    card.addEventListener("click", toggle);
-    card.addEventListener("keydown", e => {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
-    });
-    const img = card.querySelector(".flip-back img");
-    img.addEventListener("error", () => {
-        img.hidden = true;
-        card.querySelector(".cert-missing").hidden = false;
-    });
 });
 
 /* CURRENT YEAR */
