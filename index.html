@@ -676,6 +676,40 @@ body{background:var(--bg)!important}
 [data-theme="dark"] .highlight-grid .highlight-ico{background:#354b77}
 [data-theme="dark"] .highlight-grid .highlight.has-inner-network>.inner-network-lines{opacity:.32!important}
 </style>
+<style id="contact-dark-readability-fix">
+/* Softer navy contact section; network remains confined to the contact card. */
+[data-theme="dark"] #contact.contact {
+  background: #111c35 !important;
+  color: #f8fafc;
+}
+[data-theme="dark"] #contact .contact-box {
+  background-color: #192b49 !important;
+  border-color: rgba(147,197,253,.35);
+}
+[data-theme="dark"] #contact .contact-box p,
+[data-theme="dark"] #contact .contact-details { color: #e2e8f0; }
+[data-theme="dark"] #contact .contact-box > .inner-network-lines { opacity: .29 !important; }
+[data-theme="dark"] footer { background: #0d172b !important; color: #a9bdd9; }
+/* Keep the original light theme unchanged. */
+</style>
+<style id="contact-theme-consistency-fix">
+/* Contact matches the other light-theme sections, while its network stays inside the card. */
+:root:not([data-theme="dark"]) #contact.contact{background:var(--bg-secondary)!important;color:var(--text)!important}
+:root:not([data-theme="dark"]) #contact .contact-box{background:rgba(255,255,255,.94)!important;color:#0f172a!important;border:1px solid rgba(148,163,184,.32)!important;box-shadow:0 12px 36px rgba(15,23,42,.055)}
+:root:not([data-theme="dark"]) #contact .contact-box h2{color:#0f172a!important}
+:root:not([data-theme="dark"]) #contact .contact-box p,
+:root:not([data-theme="dark"]) #contact .contact-details{color:#475569!important}
+:root:not([data-theme="dark"]) #contact .contact-details a{color:#2563eb!important}
+:root:not([data-theme="dark"]) #contact .avail span{color:#1e40af!important;background:#eff6ff!important;border-color:#bfdbfe!important}
+:root:not([data-theme="dark"]) #contact .social a{color:#1d4ed8!important;background:#f1f5ff!important;border-color:#cbd5e1!important}
+:root:not([data-theme="dark"]) #contact .btn-call{color:#1d4ed8!important;background:#eff6ff!important;border-color:#bfdbfe!important}
+:root:not([data-theme="dark"]) #contact .contact-box>.inner-network-lines{opacity:.19!important}
+:root:not([data-theme="dark"]) footer{background:#f8fafc!important;color:#64748b!important;border-top:1px solid rgba(148,163,184,.2)}
+/* In dark mode, retain the softer navy card and ensure the network doesn't overpower the text. */
+[data-theme="dark"] #contact .contact-box{background-color:#192b49!important}
+[data-theme="dark"] #contact .contact-box>.inner-network-lines{opacity:.24!important}
+@media(max-width:600px){#contact .contact-box{gap:20px}#contact .contact-cta{width:100%}}
+</style>
 </head>
 <body>
 
@@ -1054,9 +1088,7 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <p>I'm open to opportunities as a Virtual Assistant, including administrative support, data entry, customer service, e-commerce support, and order and inventory coordination.</p>
 <div class="avail"><span>🕘 Mon–Fri, Philippine Time (PHT)</span><span>⚡ Replies within 24 hours</span></div>
 <div class="contact-details">
-<div>📞 <a href="tel:+639168552232">+63 916 855 2232</a></div>
-<div>💬 WhatsApp: <a href="https://wa.me/639168552232" target="_blank" rel="noopener noreferrer">+63 916 855 2232</a></div>
-<div>✈️ Telegram: <a href="https://t.me/+639168552232" target="_blank" rel="noopener noreferrer">+63 916 855 2232</a></div>
+<div>📱 <a href="tel:+639168552232">+63 916 855 2232</a> <span style="color:inherit;opacity:.8">— Phone | WhatsApp | Telegram</span></div>
 <div>✉️ <a href="mailto:edwinpenacubajr@gmail.com">edwinpenacubajr@gmail.com</a></div>
 <div>📍 Bacolod City, Negros Occidental, Philippines</div>
 </div>
