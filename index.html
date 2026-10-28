@@ -1231,6 +1231,11 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
   box-shadow:0 0 0 1px rgba(162,179,255,.32),0 0 28px 5px rgba(93,111,255,.32),0 12px 28px rgba(0,0,0,.28) !important;
 }
 </style>
+<style id="about-inner-soft-crystal-2026">
+/* Subtle interior glass matching Education, without changing About's border. */
+#about .about-grid{background:linear-gradient(135deg,rgba(255,255,255,.80),rgba(226,236,255,.50) 58%,rgba(239,232,255,.62)) !important;backdrop-filter:blur(18px) saturate(155%);-webkit-backdrop-filter:blur(18px) saturate(155%);}
+[data-theme="dark"] #about .about-grid{background:linear-gradient(135deg,rgba(29,48,87,.78),rgba(18,28,58,.75) 60%,rgba(42,30,77,.70)) !important;}
+</style>
 <style id="petty-image-outline-final">
 /* Visible outline around the Petty Cash Studio screenshot only. */
 #projects .petty-project .petty-preview {
@@ -1245,16 +1250,14 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
 }
 </style>
 <style id="eod-image-frame-border">
-/* Border around the EOD screenshot only; preserves the outer project card. */
+/* Clean, borderless EOD screenshot; the featured card keeps its own outline. */
 #projects .project-featured .featured-visual {
-  border: 2px solid #79aaff !important;
-  border-radius: 13px !important;
-  box-shadow: 0 0 0 1px rgba(96,165,250,.18), 0 0 15px rgba(59,130,246,.24) !important;
-  box-sizing: border-box;
-}
-[data-theme="dark"] #projects .project-featured .featured-visual {
-  border-color: #82b4ff !important;
-  box-shadow: 0 0 0 1px rgba(96,165,250,.25), 0 0 18px rgba(59,130,246,.35) !important;
+  border: none !important;
+  border-radius: 11px !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+  object-fit: contain;
 }
 </style>
 <style id="profile-card-border-restored">
@@ -1277,7 +1280,12 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
 [data-theme="dark"] #projects .real-project-preview img{border-color:#76a5ff;box-shadow:0 0 12px rgba(77,131,255,.24)}
 @media(max-width:600px){#projects .project:not(.project-featured) .real-project-preview{height:190px;flex-basis:190px}}
 @media(prefers-reduced-motion:reduce){#projects .real-project-preview img{transition:none}}
-</style></head>
+</style><style id="profile-card-height-only-2026">
+/* Increase only the profile card height; preserve original width and typography. */
+@media (min-width:851px){.profile-card{min-height:490px;display:flex;flex-direction:column;justify-content:center}}
+@media (max-width:850px){.profile-card{min-height:470px;display:flex;flex-direction:column;justify-content:center}}
+</style>
+</head>
 <body>
 <div class="cursor-glow"></div>
 <div class="bg-orb orb-one"></div>
@@ -1525,13 +1533,13 @@ I bring a practical, detail-oriented approach to organizing information, managin
 </div>
 </article>
 <div class="project reveal petty-project"><div aria-label="Petty Cash Studio screenshot preview" class="petty-preview"><img alt="Actual Petty Cash Studio interface showing liquidation details, supporting documents, and expense summaries" loading="lazy" src="petty-cash-studio.png"/></div><div class="project-content"><div><div class="project-tag">Finance Automation · AI-Assisted</div><h3>Petty Cash Studio</h3><p>A browser-based petty cash workflow for supporting documents, expense entries, and Excel liquidation reports ready for review and printing.</p></div><div><div class="project-tools">HTML / CSS / JavaScript / Excel Export / AI-Assisted</div><div class="project-actions"><a class="project-link" href="https://edwinpenacubaitechbacolod.github.io/Petty-Cash-Studio/#export" rel="noopener noreferrer" target="_blank">View Live Project ↗</a></div></div></div></div>
-<div class="project reveal"><div aria-label="Inventory Tracking System actual screenshot preview" class="real-project-preview"><img alt="Inventory Tracking System screenshot" loading="lazy" src="images/inventory-tracking.jpg"/></div><div class="project-content"><div><div class="project-tag">Inventory</div><h3>Inventory Tracking System</h3><p>A stock reporting workflow for checking product balances, reviewing stock statuses, and preparing organized inventory reports using sample data.</p></div><div><div class="project-tools">Excel / Warehouse System Reports</div><div class="project-actions"><a class="project-link" href="inventory-process.html" rel="noopener" target="_blank">See My Process ↗</a></div></div></div></div>
-<div class="project reveal"><div aria-label="Warehouse Operations Tracker actual screenshot preview" class="real-project-preview"><img alt="Warehouse Operations Tracker screenshot" loading="lazy" src="images/warehouse-operations-tracker.jpg"/></div><div class="project-content"><div><div class="project-tag">Logistics</div><h3>Warehouse Operations Tracker</h3><p>A warehouse command center for monitoring shipments, delivery lead times, reporting, and alerts using imported delivery records.</p></div><div><div class="project-tools">Excel / Google Sheets / Streamlit</div><div class="project-actions"><a class="project-link" href="https://bacolod-warehouse-monitoring-it2drdk7mjh3maaboxe3zf.streamlit.app/" rel="noopener noreferrer" target="_blank">View Live Sample ↗</a>
+<div class="project reveal"><div aria-label="Inventory Tracking System actual screenshot preview" class="real-project-preview"><img alt="Inventory Tracking System screenshot" loading="lazy" src="inventory-tracking.jpg"/></div><div class="project-content"><div><div class="project-tag">Inventory</div><h3>Inventory Tracking System</h3><p>A stock reporting workflow for checking product balances, reviewing stock statuses, and preparing organized inventory reports using sample data.</p></div><div><div class="project-tools">Excel / Warehouse System Reports</div><div class="project-actions"><a class="project-link" href="inventory-process.html" rel="noopener" target="_blank">See My Process ↗</a></div></div></div></div>
+<div class="project reveal"><div aria-label="Warehouse Operations Tracker actual screenshot preview" class="real-project-preview"><img alt="Warehouse Operations Tracker screenshot" loading="lazy" src="warehouse-operations-tracker.jpg"/></div><div class="project-content"><div><div class="project-tag">Logistics</div><h3>Warehouse Operations Tracker</h3><p>A warehouse command center for monitoring shipments, delivery lead times, reporting, and alerts using imported delivery records.</p></div><div><div class="project-tools">Excel / Google Sheets / Streamlit</div><div class="project-actions"><a class="project-link" href="https://bacolod-warehouse-monitoring-it2drdk7mjh3maaboxe3zf.streamlit.app/" rel="noopener noreferrer" target="_blank">View Live Sample ↗</a>
 <a class="project-link" href="https://docs.google.com/spreadsheets/d/1epIWQ5NT4NFiLwPAIIWgnkEQDD4X-CtYkVmr3JDK0B0/edit?gid=0#gid=0" rel="noopener noreferrer" target="_blank">View Delivery Sheet ↗</a></div></div></div></div>
-<div class="project reveal"><div aria-label="Product &amp; Logistics Research actual screenshot preview" class="real-project-preview"><img alt="Product &amp; Logistics Research screenshot" loading="lazy" src="images/product-listing-studio.jpg"/></div><div class="project-content"><div><div class="project-tag">E-commerce · Product Operations</div><h3>Product Listing Studio</h3><p>An interactive product listing workspace for importing catalogs, analyzing products, preparing listing drafts, reviewing details, and exporting CSV files.</p></div><div><div class="project-tools">Streamlit / Python / CSV / E-commerce / AI-Assisted</div><div class="project-actions"><a class="project-link" href="https://shopify-listing-studio-cqlmdmdkjgabddngxwebzd.streamlit.app/#bring-in-your-products" rel="noopener noreferrer" target="_blank">View Live Sample ↗</a></div></div></div></div>
-<div class="project reveal"><div aria-label="Customer Support Workflow actual screenshot preview" class="real-project-preview"><img alt="Customer Support Workflow screenshot" loading="lazy" src="images/customer-support-workflow.jpg"/></div><div class="project-content"><div><div class="project-tag">Workflow &amp; Task Management</div><h3>Customer Support Workflow</h3><p>A simple workflow for handling customer inquiries, recording concerns, providing updates, and following up professionally.</p></div><div><div class="project-tools">Communication / CRM Concepts</div><div class="project-actions"><a class="project-link" href="customer-support-workflow.html" rel="noopener" target="_blank">View Sample ↗</a>
+<div class="project reveal"><div aria-label="Product &amp; Logistics Research actual screenshot preview" class="real-project-preview"><img alt="Product &amp; Logistics Research screenshot" loading="lazy" src="product-listing-studio.jpg"/></div><div class="project-content"><div><div class="project-tag">E-commerce · Product Operations</div><h3>Product Listing Studio</h3><p>An interactive product listing workspace for importing catalogs, analyzing products, preparing listing drafts, reviewing details, and exporting CSV files.</p></div><div><div class="project-tools">Streamlit / Python / CSV / E-commerce / AI-Assisted</div><div class="project-actions"><a class="project-link" href="https://shopify-listing-studio-cqlmdmdkjgabddngxwebzd.streamlit.app/#bring-in-your-products" rel="noopener noreferrer" target="_blank">View Live Sample ↗</a></div></div></div></div>
+<div class="project reveal"><div aria-label="Customer Support Workflow actual screenshot preview" class="real-project-preview"><img alt="Customer Support Workflow screenshot" loading="lazy" src="customer-support-workflow.jpg"/></div><div class="project-content"><div><div class="project-tag">Workflow &amp; Task Management</div><h3>Customer Support Workflow</h3><p>A simple workflow for handling customer inquiries, recording concerns, providing updates, and following up professionally.</p></div><div><div class="project-tools">Communication / CRM Concepts</div><div class="project-actions"><a class="project-link" href="customer-support-workflow.html" rel="noopener" target="_blank">View Sample ↗</a>
 <a class="project-link" href="https://trello.com/b/g9Oexd9y/customer-support-workflow" rel="noopener noreferrer" target="_blank">View Trello Board ↗</a></div></div></div></div>
-<div class="project reveal discover-project"><div class="discover-preview"><img alt="Discover Ara-al website homepage screenshot" loading="lazy" src="images/discover-araal.png"/></div><div class="project-content"><div><div class="project-tag">Community Website · Web Development</div><h3>Discover Ara-al</h3><p>A responsive community website showcasing Barangay Ara-al in La Carlota City, including attractions, local culture, events, food, businesses, and places to stay.</p></div><div><div class="project-tools">HTML / CSS / JavaScript / GitHub Pages / AI-Assisted</div><div class="project-actions"><a class="project-link" href="https://edwinpenacubajr.github.io/discover-ara-al/" rel="noopener noreferrer" target="_blank">View Live Website ↗</a></div></div></div></div>
+<div class="project reveal discover-project"><div class="discover-preview"><img alt="Discover Ara-al website homepage screenshot" loading="lazy" src="discover-araal.png"/></div><div class="project-content"><div><div class="project-tag">Community Website · Web Development</div><h3>Discover Ara-al</h3><p>A responsive community website showcasing Barangay Ara-al in La Carlota City, including attractions, local culture, events, food, businesses, and places to stay.</p></div><div><div class="project-tools">HTML / CSS / JavaScript / GitHub Pages / AI-Assisted</div><div class="project-actions"><a class="project-link" href="https://edwinpenacubajr.github.io/discover-ara-al/" rel="noopener noreferrer" target="_blank">View Live Website ↗</a></div></div></div></div>
 </div>
 </div>
 </section>
