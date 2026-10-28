@@ -853,6 +853,38 @@ nav .nav-hire:hover,nav .nav-hire:focus-visible{
 [data-theme="dark"] #projects .project:not(.project-featured) .mini-preview,
 [data-theme="dark"] #projects .project:not(.project-featured) .petty-preview {border-bottom-color:#648dd4 !important}
 </style>
+
+<!-- Education layout/readability fix: scoped to Education only -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style id="education-balanced-final-fix">
+/* Keep headings clear of fixed navigation when using anchor links. */
+html{scroll-padding-top:125px}
+#education{scroll-margin-top:125px!important;padding-top:92px!important}
+#education .section-head{margin-bottom:25px}
+/* Regular, predictable rows rather than masonry / uneven columns. */
+#education .education-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;align-items:stretch!important;gap:18px!important}
+#education .education-card{height:100%;min-width:0;padding:23px!important;border:1px solid rgba(93,145,239,.43)!important}
+/* Background is decorative and must not compete with text. */
+#education .education-card.has-inner-network>.inner-network-lines{opacity:.10!important}
+[data-theme="dark"] #education .education-card.has-inner-network>.inner-network-lines{opacity:.13!important}
+[data-theme="dark"] #education .education-card{border-color:rgba(125,170,255,.43)!important}
+#education .education-card h3{font-size:18px;line-height:1.4}
+#education .education-card p,#education .education-card .date-small{font-size:14px!important;line-height:1.7}
+#education .education-card .training-list li{font-size:14px!important;line-height:1.7;margin-bottom:8px}
+#education .education-card .school{font-size:14px!important}
+[data-theme="dark"] #education .education-card p,
+[data-theme="dark"] #education .education-card .date-small,
+[data-theme="dark"] #education .education-card .training-list li{color:#cbd5e1!important}
+[data-theme="dark"] #education .education-card h3{color:#f8fafc!important}
+/* Match the previously requested font pairing across the site. */
+body{font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"DM Sans",system-ui,sans-serif;font-weight:700}
+code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
+@media(max-width:850px){#education{padding-top:82px!important;scroll-margin-top:115px!important}}
+@media(max-width:650px){#education .education-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}#education .education-card{padding:19px!important}#education{padding-top:76px!important}}
+</style>
 </head>
 <body>
 
