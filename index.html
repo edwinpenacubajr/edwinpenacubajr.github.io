@@ -559,6 +559,14 @@ section:not(.hero){scroll-margin-top:105px}
 @media(max-width:600px){#projects .petty-project .petty-preview{height:165px;flex-basis:165px}}
 @media(prefers-reduced-motion:reduce){#projects .petty-project .petty-preview img{transition:none}}
 </style>
+
+<style id="petty-cash-border-and-static-preview">
+/* Screenshot is decorative; only the View Live Project button opens the app. */
+#projects .petty-project .petty-preview{border:2px solid #93b5ec;border-radius:11px 11px 0 0;box-shadow:inset 0 0 0 3px rgba(255,255,255,.65);cursor:default;}
+#projects .petty-project .petty-preview img{transition:none!important;transform:none!important;}
+#projects .petty-project .petty-preview:hover img{transform:none!important;}
+[data-theme="dark"] #projects .petty-project .petty-preview{border-color:#688cce;box-shadow:inset 0 0 0 2px rgba(15,23,42,.55)}
+</style>
 </head>
 <body>
 
@@ -906,7 +914,7 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 </div>
 </article>
 
-<div class="project reveal petty-project"><a class="petty-preview" href="https://edwinpenacubaitechbacolod.github.io/Petty-Cash-Studio/#export" target="_blank" rel="noopener noreferrer" aria-label="Open Petty Cash Studio live demo"><img src="petty-cash-studio.png" alt="Actual Petty Cash Studio interface showing liquidation details, supporting documents, and expense summaries" loading="lazy"></a><div class="project-content"><div><div class="project-tag">Finance Automation · AI-Assisted</div><h3>Petty Cash Studio</h3><p>A browser-based petty cash workflow for supporting documents, expense entries, and Excel liquidation reports ready for review and printing.</p></div><div><div class="project-tools">HTML / CSS / JavaScript / Excel Export / AI-Assisted</div><div class="project-actions"><a class="project-link" href="https://edwinpenacubaitechbacolod.github.io/Petty-Cash-Studio/#export" target="_blank" rel="noopener noreferrer">View Live Project ↗</a></div></div></div></div>
+<div class="project reveal petty-project"><div class="petty-preview" aria-label="Petty Cash Studio screenshot preview"><img src="petty-cash-studio.png" alt="Actual Petty Cash Studio interface showing liquidation details, supporting documents, and expense summaries" loading="lazy"></div><div class="project-content"><div><div class="project-tag">Finance Automation · AI-Assisted</div><h3>Petty Cash Studio</h3><p>A browser-based petty cash workflow for supporting documents, expense entries, and Excel liquidation reports ready for review and printing.</p></div><div><div class="project-tools">HTML / CSS / JavaScript / Excel Export / AI-Assisted</div><div class="project-actions"><a class="project-link" href="https://edwinpenacubaitechbacolod.github.io/Petty-Cash-Studio/#export" target="_blank" rel="noopener noreferrer">View Live Project ↗</a></div></div></div></div>
 
 <div class="project reveal"><div class="mini-preview inventory" aria-label="Illustrative preview of inventory records"><div class="mini-label">Inventory records</div><div class="mini-lines"><span></span><span></span><span></span></div><div class="mini-chips"><i></i><i></i><i></i></div></div><div class="project-content"><div><div class="project-tag">Inventory</div><h3>Inventory Tracking System</h3><p>A structured spreadsheet for monitoring item descriptions, quantities, stock status, checking, and inventory updates.</p></div><div><div class="project-tools">Excel / Warehouse System Reports</div><div class="project-actions"><a class="project-link" href="inventory-process.html" target="_blank" rel="noopener">See My Process ↗</a></div></div></div></div>
 
