@@ -17,7 +17,16 @@
 <meta property="og:image:alt" content="Edwin Peñacuba Jr., entry-level Virtual Assistant">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://edwinpenacubajr.github.io/og-image.png">
-<noscript><style>.reveal{opacity:1;transform:none}.skill-fill{width:100%}</style></noscript>
+<noscript><style>.reveal{opacity:1;transform:none}.skill-fill{width:100%}
+/* Featured EOD project */
+.project-featured{grid-column:1/-1;min-height:unset;padding:0;display:grid;grid-template-columns:1.15fr 1fr;align-items:stretch}
+.project-featured .featured-visual{width:100%;height:100%;min-height:290px;object-fit:cover;display:block}
+.project-featured .featured-body{padding:30px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.project-featured .featured-body p{margin-top:12px}
+.project-featured .featured-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.project-featured .featured-tags span{font-size:11px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:1px solid var(--border);padding:5px 9px;border-radius:20px}
+@media(max-width:750px){.project-featured{grid-template-columns:1fr}.project-featured .featured-visual{height:auto;min-height:0;aspect-ratio:16/9}.project-featured .featured-body{padding:24px}}
+</style></noscript>
 <style>
 /* ROOT */
 :root{--bg:#f8fafc;--bg-secondary:#fff;--card:rgba(255,255,255,.78);--text:#0f172a;--muted:#55657a;--blue:#2563eb;--blue-light:#60a5fa;--blue-soft:#eff6ff;--purple:#7c3aed;--border:rgba(148,163,184,.25);--nav:rgba(255,255,255,.78);--dark:#020617;--shadow:rgba(15,23,42,.10);--glass:rgba(255,255,255,.62)}
@@ -643,6 +652,18 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 </div>
 
 <div class="cards">
+
+<article class="project project-featured reveal" aria-label="Featured BCD Warehouse EOD project">
+<img class="featured-visual" src="assets/images/bcd-warehouse-eod.png" alt="Illustrated desktop and mobile showcase of the BCD Warehouse End-of-Day Reporting System" loading="lazy">
+<div class="featured-body">
+<div class="project-tag">Featured Project · AI-Assisted Development</div>
+<h3>BCD Warehouse EOD Reporting System</h3>
+<p>A workplace reporting solution designed to simplify daily staff activity submissions, generate report previews, and consolidate warehouse updates for supervisor review.</p>
+<p>My role: Defined the workflow and requirements, guided AI-assisted development, tested the system, and refined it for actual warehouse operations.</p>
+<div class="featured-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Google Apps Script</span><span>Google Sheets</span><span>AI-Assisted</span></div>
+<div><a class="project-link" href="https://edwinpenacubaitechbacolod.github.io/bcd-warehouse-eod/" target="_blank" rel="noopener noreferrer">View Live Project ↗</a></div>
+</div>
+</article>
 
 <div class="project reveal"><div class="project-content"><div><div class="project-tag">Inventory</div><h3>Inventory Tracking System</h3><p>A structured spreadsheet for monitoring item descriptions, quantities, stock status, checking, and inventory updates.</p></div><div><div class="project-tools">Excel / Warehouse System Reports</div><a class="project-link" href="inventory-process.html" target="_blank" rel="noopener">See My Process ↗</a></div></div></div>
 
