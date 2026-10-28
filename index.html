@@ -18,6 +18,46 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://edwinpenacubajr.github.io/og-image.png">
 <noscript><style>.reveal{opacity:1;transform:none}.skill-fill{width:100%}
+
+/* Site-wide compact layout: visual-only overrides; interactions unchanged */
+html{scroll-padding-top:88px}
+section{padding:68px 20px}
+.section-head{margin-bottom:28px}
+h2{font-size:clamp(28px,3.8vw,39px);letter-spacing:-1.4px}
+.about-grid{gap:34px}
+.about-text{font-size:15px}
+.skills{gap:12px}
+.skill-item{padding:13px 15px}
+.highlight-grid{gap:13px;margin-top:25px}
+.highlight{padding:18px 15px}
+.highlight-number{font-size:28px}
+.highlight-ico{width:40px;height:40px;margin-bottom:9px}
+.cards{gap:15px}
+.card{padding:21px;border-radius:16px}
+.card h3{font-size:17px}
+.icon{width:43px;height:43px;margin-bottom:13px;font-size:21px}
+.experience{grid-template-columns:165px minmax(0,1fr);gap:22px;padding:0 0 32px 32px}
+.experience h3{font-size:19px}
+.education-grid{gap:16px}
+.education-card{padding:21px;border-radius:16px}
+.education-icon{width:43px;height:43px;margin-bottom:12px}
+.training-list li{margin-bottom:6px}
+.tools-wrap{margin-top:32px}
+.tools-title{font-size:19px;margin-bottom:14px}
+.tools-grid{gap:15px}
+.tool-group{padding:19px;border-radius:16px}
+.chips{gap:8px}
+.chip{padding:7px 11px;font-size:12px}
+.project{min-height:225px;padding:21px;border-radius:16px}
+.project h3{font-size:18px}
+.project-tools{margin-top:17px}
+.project-link{margin-top:11px;padding:9px 13px}
+.contact-box{gap:26px}
+.contact-details,.social{margin-top:14px}
+.avail{margin-top:16px}
+@media(min-width:851px){.hero{min-height:auto;padding:112px 20px 58px}.hero-grid{gap:36px}.hero h1{font-size:clamp(38px,4.1vw,55px)} }
+@media(max-width:850px){section{padding:56px 20px}.hero{padding:106px 20px 48px}.hero-grid{gap:28px}.about-grid{gap:24px}.highlight-grid{gap:12px}}
+@media(max-width:600px){section{padding:46px 17px}.section-head{margin-bottom:22px}h2{font-size:clamp(27px,7vw,34px)}.hero{padding:98px 17px 40px}.hero h1{font-size:clamp(33px,9vw,42px)}.cards,.education-grid,.tools-grid{gap:12px}.card,.education-card,.tool-group,.project{padding:18px}.experience{grid-template-columns:1fr;gap:6px;padding:0 0 27px 28px}.highlight{padding:15px 10px}.highlight-number{font-size:24px}.skills{gap:10px}.skill-item{padding:12px}.project{min-height:0}.contact-box{gap:20px}}
 </style></noscript>
 <style>
 /* ROOT */
@@ -368,6 +408,34 @@ nav.scrolled .navbar{height:56px}
 }
 @media(max-width:390px){.nav-hire{padding:8px 9px}.nav-hire span{display:none}.nav-actions{gap:5px}}
 </style>
+<style id="portfolio-global-refinement">
+/* Global refinement — retains existing interactive elements and breakpoints */
+section:not(.hero){padding-top:58px;padding-bottom:58px;scroll-margin-top:85px}
+.section-head{margin-bottom:24px}
+.section-head h2{font-size:clamp(27px,3.1vw,38px);line-height:1.18;letter-spacing:-.8px}
+.section-head p{max-width:670px;font-size:14px;line-height:1.65}
+.cards{gap:16px}
+.card{padding:21px;border-radius:16px;min-height:0;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-3px);border-color:var(--blue);box-shadow:0 12px 26px var(--shadow)}
+.card h3{font-size:16px;line-height:1.35;margin-bottom:7px}
+.card p{font-size:13px;line-height:1.6}
+.card .icon{width:42px;height:42px;font-size:20px;margin-bottom:12px}
+.services-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.services-cards .card{height:100%}
+.experience{gap:20px;padding-bottom:26px}
+.education-grid,.tools-grid{gap:15px}
+.education-card,.tool-group{padding:20px}
+.project{padding:20px;min-height:0}
+.project h3{font-size:17px}
+.project p{font-size:13px;line-height:1.65}
+.project-featured{overflow:hidden}
+.featured-visual{max-height:240px;object-fit:cover}
+.featured-tags{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.featured-tags span{display:inline-flex;padding:5px 9px;border-radius:7px;background:var(--blue-soft);color:var(--blue);font-size:11px;font-weight:700}
+@media(max-width:850px){section:not(.hero){padding-top:48px;padding-bottom:48px}.services-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){section:not(.hero){padding-top:40px;padding-bottom:40px}.section-head{margin-bottom:19px}.services-cards{grid-template-columns:1fr;gap:12px}.card,.education-card,.tool-group,.project{padding:17px}.featured-visual{max-height:210px}}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
 </head>
 <body>
 
@@ -477,25 +545,15 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <!-- SERVICES -->
 <section id="services" class="services-section">
 <div class="container">
-<div class="section-head reveal">
-<div class="eyebrow">What I Can Do</div>
-<h2>Services & Expertise</h2>
-<p>Practical support based on real-world operations, logistics, customer service, technology, and administrative experience.</p>
-</div>
-
-<div class="cards">
-<div class="card reveal"><div class="icon">📊</div><h3>Data Entry & Excel</h3><p>Accurate data entry, spreadsheet management, inventory lists, data checking, sorting information, and maintaining organized records.</p></div>
-<div class="card reveal"><div class="icon">📦</div><h3>Warehouse & Inventory</h3><p>Inventory monitoring, item checking, stock records, receiving support, documentation, labeling, and warehouse coordination.</p></div>
-<div class="card reveal"><div class="icon">📁</div><h3>Administrative Support</h3><p>Document preparation, record keeping, reports, tracking sheets, file organization, and routine administrative tasks.</p></div>
-<div class="card reveal"><div class="icon">💻</div><h3>Technology Support</h3><p>Technology product knowledge, customer assistance, product information, troubleshooting support, and technology-related coordination.</p></div>
-<div class="card reveal"><div class="icon">💬</div><h3>Customer Service</h3><p>Professional communication, customer assistance, inquiries, follow-ups, issue handling, and clear service updates.</p></div>
-<div class="card reveal"><div class="icon">🔎</div><h3>Research & Online Tasks</h3><p>Web research, information gathering, product research, comparing details, organizing findings, and preparing useful summaries.</p></div>
-<div class="card reveal"><div class="icon">🛒</div><h3>E-Commerce Support</h3><p>Product information management, online research, order-related coordination, data organization, and digital business support.</p></div>
-<div class="card reveal"><div class="icon">✉️</div><h3>Email & Communication</h3><p>Professional messages, coordination, follow-ups, status updates, and communication with customers, suppliers, and teams.</p></div>
-<div class="card reveal"><div class="icon">🗂️</div><h3>Records & Documentation</h3><p>Keeping records structured, updated, accurate, easy to retrieve, and consistent with operational requirements.</p></div>
-</div>
-</div>
-</section>
+<div class="section-head reveal"><div class="eyebrow">What I Can Do</div><h2>Services & Expertise</h2><p>Supporting businesses through accurate data management, e-commerce operations, inventory coordination, and practical AI-assisted digital solutions.</p></div>
+<div class="cards services-cards">
+<div class="card reveal"><div class="icon">⌨️</div><h3>Data Entry & Excel</h3><p>Accurate data entry, spreadsheets, data checking, and organized reports.</p></div>
+<div class="card reveal"><div class="icon">🛒</div><h3>E-commerce Operations</h3><p>Product information, listing preparation, order tracking, and inventory updates.</p></div>
+<div class="card reveal"><div class="icon">📦</div><h3>Inventory & Logistics</h3><p>Stock monitoring, receiving records, documentation, and delivery coordination.</p></div>
+<div class="card reveal"><div class="icon">⚙️</div><h3>AI-Assisted Automation</h3><p>Digital forms, reporting tools, and practical workflow improvements with AI assistance.</p></div>
+<div class="card reveal"><div class="icon">📁</div><h3>Administrative Support</h3><p>Document preparation, tracking sheets, file organization, and reporting.</p></div>
+<div class="card reveal"><div class="icon">🔎</div><h3>Research & Online Tasks</h3><p>Web research, product comparisons, data gathering, and structured summaries.</p></div>
+</div></div></section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -708,7 +766,7 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <div class="section-head reveal">
 <div class="eyebrow">Sample Work</div>
 <h2>Portfolio Projects</h2>
-<p>Practical examples inspired by my experience in logistics, administration, customer service, and digital work.</p>
+<p>Practical projects in warehouse operations, digital reporting, automation, and web development.</p>
 </div>
 
 <div class="cards">
