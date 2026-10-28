@@ -898,8 +898,6 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
 #services .services-cards .card h3{overflow-wrap:break-word}
 #services .services-cards .card p{line-height:1.65}
 </style>
-
-
 <style id="about-original-cards-restored">#about .skill-item{min-height:155px;}#about .skill-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}#about .skill-top strong{min-width:0;flex:1;}#about .skill-top [data-level]{flex-shrink:0;font-weight:600;}#about .skill-bar{display:block;}#about .skill-fill{display:block;}#about .skills-grid{align-items:stretch;}@media(max-width:700px){#about .skill-item{min-height:130px}}</style><style id="about-skill-overlap-fix">
 /* Reserve a real column for each label, rather than letting it cover the title. */
 #about .skills{min-width:0;}
@@ -933,7 +931,6 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
 @media(max-width:800px){#experience .exp-highlights{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){#experience .experience{padding:18px!important}#experience .exp-highlights span{font-size:11px}#experience .experience .date{margin-bottom:10px}}
 </style>
-
 <style id="education-experience-matched-2026">
 /* Education now follows the same compact, full-width timeline language as Experience. */
 #education .education-timeline{display:grid;gap:22px;position:relative;padding-left:30px}
@@ -954,7 +951,6 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
 @media(max-width:800px){#education .edu-highlights{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){#education .education-timeline{padding-left:22px;gap:14px}#education .education-timeline::before{left:5px}#education .education-card{padding:18px!important}#education .education-card::before{left:-22px}#education .edu-highlights span{font-size:11px}}
 </style>
-
 <style id="modern-crystal-stats-2026">
 /* Crystal-glass stats; existing dimensions, grid gaps, counters and network preserved. */
 .highlight-grid .highlight{
@@ -1072,6 +1068,133 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
 }
 @media(prefers-reduced-motion:reduce){#projects a.project-link{transition:none!important}#projects a.project-link::after{animation:none!important}}
 </style>
+<style id="about-type-justify-refinement">
+/* Paragraphs justify individually without stretching their final lines. */
+#about .about-text{font-size:clamp(14px,1.05vw,16px)!important;line-height:1.78!important;text-align:justify!important;text-justify:inter-word;hyphens:none;overflow-wrap:normal;letter-spacing:0!important}
+#about .about-text p{margin:0 0 19px!important;text-align:justify!important;text-align-last:left;}
+#about .about-text p:last-child{margin-bottom:0!important}
+/* Skill names and levels have dedicated areas: no broken words. */
+#about .skill-top{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:8px!important;align-items:start!important}
+#about .skill-top strong{font-size:clamp(11px,.9vw,13px)!important;line-height:1.45!important;overflow-wrap:normal!important;word-break:normal!important;hyphens:none!important;align-items:flex-start!important}
+#about .skill-top [data-level]{font-size:clamp(10px,.78vw,12px)!important;line-height:1.5!important;white-space:nowrap!important;padding-top:3px!important}
+#about .skill-ico{flex-shrink:0!important}
+@media(max-width:1100px){#about .skill-top{grid-template-columns:minmax(0,1fr)!important}#about .skill-top [data-level]{justify-self:end!important;padding-top:0!important}}
+@media(max-width:700px){#about .about-text{text-align:left!important}#about .about-text p{text-align:left!important}#about .skill-top{grid-template-columns:minmax(0,1fr) auto!important}}
+@media(max-width:430px){#about .skill-top{grid-template-columns:minmax(0,1fr)!important}}
+</style>
+<style id="about-balanced-vertical-type-v2">
+/* Match the top and bottom of the biography with the skills grid. */
+@media(min-width:851px){
+ #about .about-grid{align-items:stretch!important;}
+ #about .about-text{display:flex!important;flex-direction:column!important;justify-content:space-between!important;align-self:stretch!important;gap:12px!important;}
+ #about .about-text p{margin:0!important;}
+}
+#about .about-text{font-size:clamp(15px,1.15vw,17px)!important;line-height:1.72!important;}
+@media(max-width:850px){#about .about-text{font-size:16px!important;line-height:1.7!important;}#about .about-text p{margin-bottom:18px!important;}}
+@media(max-width:480px){#about .about-text{font-size:15px!important;}}
+</style>
+<style id="services-crystal-glass-2026">
+/* Match the hero crystal CTAs, retaining the existing network artwork. */
+#services .services-cards{align-items:stretch}
+#services .services-cards .card{height:100%;min-width:0;isolation:isolate;background:linear-gradient(135deg,rgba(255,255,255,.80),rgba(226,236,255,.50) 58%,rgba(239,232,255,.62)) !important;border:1px solid rgba(96,137,255,.58) !important;backdrop-filter:blur(18px) saturate(155%);-webkit-backdrop-filter:blur(18px) saturate(155%);box-shadow:0 0 0 1px rgba(90,126,255,.09),0 0 17px 1px rgba(80,116,255,.16),0 9px 23px rgba(65,83,180,.10),inset 0 1px 0 rgba(255,255,255,.95) !important;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease !important}
+#services .services-cards .card:hover{transform:translateY(-4px);border-color:#7871fa !important;box-shadow:0 0 0 1px rgba(87,92,255,.24),0 0 28px 5px rgba(74,108,255,.27),0 14px 30px rgba(90,76,190,.17),inset 0 1px 0 #fff !important}
+#services .services-cards .card h3,#services .services-cards .card p,#services .services-cards .card .icon{position:relative;z-index:2}
+#services .services-cards .card h3{color:var(--text)}
+#services .services-cards .card p{color:var(--muted)}
+[data-theme="dark"] #services .services-cards .card{background:linear-gradient(135deg,rgba(29,48,87,.78),rgba(18,28,58,.75) 60%,rgba(42,30,77,.70)) !important;border-color:rgba(119,155,255,.43) !important;box-shadow:0 0 0 1px rgba(132,163,255,.12),0 0 17px 2px rgba(76,112,255,.15),0 9px 24px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.12) !important}
+[data-theme="dark"] #services .services-cards .card:hover{border-color:#a0b6ff !important;box-shadow:0 0 0 1px rgba(162,179,255,.32),0 0 28px 5px rgba(93,111,255,.32),0 12px 28px rgba(0,0,0,.28) !important}
+@media(prefers-reduced-motion:reduce){#services .services-cards .card{transition:none!important}}
+</style>
+<style id="education-tools-crystal-outline-2026">
+/* Outer card surface only; interior labels, chips, spacing and layout remain unchanged. */
+#education .education-card, #skills .tool-group, #experience .experience, #skills .cards > .card {
+ background:linear-gradient(135deg,rgba(255,255,255,.80),rgba(226,236,255,.50) 58%,rgba(239,232,255,.62)) !important;
+ border:1px solid rgba(96,137,255,.58) !important;
+ backdrop-filter:blur(18px) saturate(155%);-webkit-backdrop-filter:blur(18px) saturate(155%);
+ box-shadow:0 0 0 1px rgba(90,126,255,.09),0 0 17px 1px rgba(80,116,255,.16),0 9px 23px rgba(65,83,180,.10),inset 0 1px 0 rgba(255,255,255,.95) !important;
+ transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease !important;
+}
+#education .education-card:hover,#skills .tool-group:hover,#experience .experience:hover,#skills .cards > .card:hover{transform:translateY(-4px);border-color:#7871fa !important;box-shadow:0 0 0 1px rgba(87,92,255,.24),0 0 28px 5px rgba(74,108,255,.27),0 14px 30px rgba(90,76,190,.17),inset 0 1px 0 #fff !important}
+[data-theme="dark"] #education .education-card,[data-theme="dark"] #skills .tool-group,[data-theme="dark"] #experience .experience,[data-theme="dark"] #skills .cards > .card{background:linear-gradient(135deg,rgba(29,48,87,.78),rgba(18,28,58,.75) 60%,rgba(42,30,77,.70)) !important;border-color:rgba(119,155,255,.43) !important;box-shadow:0 0 0 1px rgba(132,163,255,.12),0 0 17px 2px rgba(76,112,255,.15),0 9px 24px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.12) !important}
+[data-theme="dark"] #education .education-card:hover,[data-theme="dark"] #skills .tool-group:hover,[data-theme="dark"] #experience .experience:hover,[data-theme="dark"] #skills .cards > .card:hover{border-color:#a0b6ff !important;box-shadow:0 0 0 1px rgba(162,179,255,.32),0 0 28px 5px rgba(93,111,255,.32),0 12px 28px rgba(0,0,0,.28) !important}
+@media(prefers-reduced-motion:reduce){#education .education-card,#skills .tool-group,#experience .experience,#skills .cards > .card{transition:none!important}}
+</style>
+<style id="contact-details-visibility-fix">
+/* Readable contact details over the decorative geometric background. */
+#contact .contact-details-readable{display:flex;flex-direction:column;align-items:flex-start;gap:9px;position:relative;z-index:2;margin-top:20px;font-size:15px;line-height:1.55}
+#contact .contact-details-readable > div{display:block;max-width:100%;padding:7px 12px;border-radius:11px;background:rgba(247,250,255,.88);border:1px solid rgba(100,140,210,.22);color:#334155;font-weight:500;overflow-wrap:anywhere;box-shadow:0 2px 10px rgba(30,64,175,.04)}
+#contact .contact-details-readable a{color:#1555dc!important;font-weight:650;text-decoration:none}
+#contact .contact-details-readable a:hover{text-decoration:underline}
+#contact .contact-details-readable span{opacity:1!important;color:#475569!important}
+[data-theme="dark"] #contact .contact-details-readable > div{background:rgba(14,29,56,.88);border-color:rgba(147,197,253,.27);color:#e2e8f0}
+[data-theme="dark"] #contact .contact-details-readable a{color:#93c5fd!important}
+[data-theme="dark"] #contact .contact-details-readable span{color:#cbd5e1!important}
+@media(max-width:600px){#contact .contact-details-readable{font-size:14px}#contact .contact-details-readable > div{padding:7px 9px}}
+</style>
+<style id="contact-crystal-outer-2026">
+/* Apply the same glowing crystal treatment to the outer Get In Touch panel only. */
+#contact .contact-box{
+  isolation:isolate;
+  background:linear-gradient(135deg,rgba(255,255,255,.82),rgba(226,236,255,.55) 58%,rgba(239,232,255,.66)) !important;
+  border:1px solid rgba(96,137,255,.62) !important;
+  -webkit-backdrop-filter:blur(18px) saturate(155%);
+  backdrop-filter:blur(18px) saturate(155%);
+  box-shadow:0 0 0 1px rgba(90,126,255,.09),0 0 19px 2px rgba(80,116,255,.18),0 12px 28px rgba(65,83,180,.12),inset 0 1px 0 rgba(255,255,255,.95) !important;
+  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;
+}
+#contact .contact-box:hover{border-color:rgba(89,105,255,.82)!important;box-shadow:0 0 0 1px rgba(90,126,255,.18),0 0 28px 4px rgba(80,116,255,.28),0 14px 32px rgba(65,83,180,.15),inset 0 1px 0 rgba(255,255,255,.95)!important;}
+[data-theme="dark"] #contact .contact-box{
+  background:linear-gradient(135deg,rgba(28,46,81,.88),rgba(12,25,53,.84) 60%,rgba(35,28,76,.76)) !important;
+  border-color:rgba(105,151,255,.56)!important;
+  box-shadow:0 0 0 1px rgba(90,126,255,.10),0 0 22px rgba(75,112,255,.18),0 14px 32px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.09)!important;
+}
+[data-theme="dark"] #contact .contact-box:hover{border-color:rgba(147,197,253,.82)!important;box-shadow:0 0 27px rgba(91,116,255,.34),0 14px 34px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.10)!important;}
+@media(prefers-reduced-motion:reduce){#contact .contact-box{transition:none!important}}
+</style>
+<style id="contact-two-column-balanced">
+#contact .contact-box{display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)!important;align-items:stretch!important;gap:clamp(20px,3vw,40px)!important;padding:clamp(22px,3vw,38px)!important}
+#contact .contact-intro,#contact .contact-connect-panel{min-width:0;position:relative;z-index:1}
+#contact .contact-intro h2{font-size:clamp(30px,4vw,52px);line-height:1.15;margin-bottom:14px}
+#contact .contact-intro>p{max-width:690px;margin-bottom:22px;line-height:1.65}
+#contact .contact-info-panel,#contact .contact-connect-panel{border:1px solid rgba(83,131,230,.25);background:rgba(246,249,255,.58);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:18px;padding:20px;box-shadow:0 8px 26px rgba(47,83,170,.055)}
+#contact .contact-info-panel h3,#contact .contact-connect-panel h3{font-size:17px;margin:0 0 16px;font-weight:700}
+#contact .contact-info-panel .contact-details{margin:0;gap:10px;align-items:stretch}
+#contact .contact-info-panel .contact-details>div{width:100%;box-sizing:border-box;padding:12px!important;background:rgba(255,255,255,.72)!important}
+#contact .contact-info-panel .avail{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+#contact .contact-info-panel .avail span{font-size:12px}
+/* Balanced inner spacing: badges remain below contact rows. */
+#contact .contact-info-panel{padding:22px 20px 22px!important}
+#contact .contact-info-panel .avail{margin-top:16px!important;margin-bottom:0!important;padding:0!important;align-items:center}
+#contact .contact-info-panel .avail span{display:inline-flex;align-items:center;min-height:40px;box-sizing:border-box}
+#contact .contact-connect-panel{display:flex;flex-direction:column}
+#contact .contact-connect-panel .contact-cta{display:grid!important;grid-template-columns:1fr!important;gap:12px!important;align-items:stretch!important;justify-content:stretch!important;margin:0 0 24px!important}
+#contact .contact-connect-panel .contact-cta a{display:flex!important;align-items:center;justify-content:center;width:100%!important;box-sizing:border-box;min-height:51px}
+#contact .contact-connect-panel h4{font-size:13px;color:var(--muted);margin:0 0 12px;font-weight:650}
+#contact .contact-connect-panel .social{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px!important;margin:0!important}
+#contact .contact-connect-panel .social a{display:flex!important;align-items:center;justify-content:center;gap:8px;min-width:0;padding:12px 8px!important;white-space:normal;text-align:center;font-size:13px}
+#contact .contact-connect-panel .brand-icon{width:19px;height:19px;flex:none}
+[data-theme="dark"] #contact .contact-info-panel,[data-theme="dark"] #contact .contact-connect-panel{background:rgba(13,26,53,.72);border-color:rgba(117,164,250,.3)}
+[data-theme="dark"] #contact .contact-info-panel .contact-details>div{background:rgba(16,32,62,.84)!important}
+@media(max-width:850px){#contact .contact-box{grid-template-columns:1fr!important}#contact .contact-connect-panel .social{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){#contact .contact-box{padding:16px!important;gap:14px!important}#contact .contact-info-panel,#contact .contact-connect-panel{padding:14px}#contact .contact-connect-panel .social a{font-size:12px}}
+</style>
+<style id="contact-availability-equal-width">
+/* Match both availability badges to the full width of the contact rows. */
+#contact .contact-info-panel .avail {
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px!important;
+  width:100%!important;
+}
+#contact .contact-info-panel .avail > span {
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  width:100%!important;min-width:0!important;box-sizing:border-box!important;
+  text-align:center!important;padding:10px 8px!important;white-space:normal!important;
+}
+@media(max-width:560px){
+  #contact .contact-info-panel .avail{grid-template-columns:1fr!important;}
+}
+</style>
 </head>
 <body>
 <div class="cursor-glow"></div>
@@ -1143,15 +1266,7 @@ I bring a practical, detail-oriented approach to organizing information, managin
 <p>A practical professional with experience across warehouse operations, logistics, technology sales, and customer service.</p>
 </div>
 <div class="about-grid">
-<div class="about-text reveal">
-I am an adaptable and detail-oriented professional with experience in warehouse and logistics operations, data entry, e-commerce, technology sales, customer service, and administrative work.
-<br/><br/>
-My current role as a <strong>Warehouse &amp; Logistics Supervisor</strong>, leading warehouse staff and daily operations, has strengthened my ability to manage inventory, documentation, receiving and delivery coordination, reports, and day-to-day operational concerns.
-<br/><br/>
-My previous experience as a <strong>Senior Technology Sales Associate</strong> also developed my communication, customer service, product knowledge, problem-solving, and sales-support skills.
-<br/><br/>
-I am comfortable working with computers, digital systems, spreadsheets, documents, and online tools. I also enjoy designing and building simple websites and visual content using AI tools, Canva, and CapCut. I can work independently while also collaborating effectively with a team.
-</div>
+<div class="about-text reveal"><p>I am an adaptable and detail-oriented professional with experience in warehouse and logistics operations, data entry, e-commerce, technology sales, customer service, and administrative work.</p><p>My current role as a <strong>Warehouse &amp; Logistics Supervisor</strong>, leading warehouse staff and daily operations, has strengthened my ability to manage inventory, documentation, receiving and delivery coordination, reports, and day-to-day operational concerns.</p><p>My previous experience as a <strong>Senior Technology Sales Associate</strong> also developed my communication, customer service, product knowledge, problem-solving, and sales-support skills.</p><p>I am comfortable working with computers, digital systems, spreadsheets, documents, and online tools. I also enjoy designing and building simple websites and visual content using AI tools, Canva, and CapCut. I can work independently while also collaborating effectively with a team.</p></div>
 <div class="skills reveal">
 <div class="skill-item"><div class="skill-top"><strong><i class="skill-ico">📦</i>Warehouse &amp; Inventory</strong><span data-level="1">Experienced</span></div><div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div></div>
 <div class="skill-item"><div class="skill-top"><strong><i class="skill-ico">📊</i>Data Entry &amp; Excel</strong><span data-level="1">Skilled</span></div><div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div></div>
@@ -1194,49 +1309,49 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <div class="experience reveal"><div class="date">May 2022 – July 2025</div><div class="exp-main"><h3>Senior Technology Sales Associate</h3><div class="company">Beyond ITECH Ventures Corporation</div><p>Ayala Malls Capitol Central · Bacolod City</p><div class="exp-highlights"><span>▣ Product Knowledge</span><span>▤ Sales Operations</span><span>▧ Store Activities</span><span>◇ Problem Solving</span></div><p class="exp-summary">Assisted with technology product inquiries and purchasing decisions, provided product information, and supported daily sales and store operations.</p><div class="exp-tags"><span>Technology Sales</span><span>Product Information</span><span>Store Operations</span></div></div></div>
 <div class="experience reveal"><div class="date">March 2017 – May 2017</div><div class="exp-main"><h3>Customer Service Representative</h3><div class="company">MICCS Business Process Outsourcing and Marketing Inc.</div><p>Mandaluyong City · Metro Manila</p><div class="exp-highlights"><span>◇ Communication</span><span>▧ Inquiry Handling</span><span>▣ Issue Resolution</span></div><p class="exp-summary">Handled customer inquiries and concerns using clear communication, active listening, and practical problem-solving.</p><div class="exp-tags"><span>Communication</span><span>Documentation</span></div></div></div>
 </div></div>
-</div>
+
 </section>
 <!-- EDUCATION & TRAINING -->
 <section class="education-section" id="education">
 <div class="container">
-  <div class="section-head reveal">
-    <div class="eyebrow">Education &amp; Training</div>
-    <h2>Education &amp; Professional Development</h2>
-  </div>
-  <div class="education-timeline">
-    <article class="education-card reveal">
-      <div class="edu-date">School Year 2018–2019</div>
-      <h3>Associate in Computer Technology</h3>
-      <div class="school">Bacolod City College</div>
-      <p class="edu-location">Bacolod City, Negros Occidental, Philippines</p>
-      <div class="edu-highlights"><span>Computer Technology</span><span>Technical Knowledge</span></div>
-      <p class="edu-summary">Academic foundation in computer technology and technical concepts.</p>
-      <div class="edu-tags"><span>Education</span></div>
-    </article>
-    <article class="education-card reveal">
-      <div class="edu-date">2019 · 250 Hours</div>
-      <h3>Sectoral Concerns &amp; Price Monitoring Unit</h3>
-      <div class="school">CMO-PMU</div>
-      <p class="edu-location">Office of the City Mayor — Bacolod City</p>
-      <div class="edu-highlights"><span>Data Entry</span><span>Record Verification</span><span>Report Preparation</span><span>Documentation</span></div>
-      <p class="edu-summary">Recorded and maintained price monitoring data, verified entries for accuracy, consolidated reports, and organized supporting records.</p>
-      <div class="edu-tags"><span>Training</span><span>Spreadsheets &amp; Databases</span></div>
-    </article>
-    <article class="education-card reveal">
-      <div class="edu-date">February 2017 · 112 Hours</div>
-      <h3>English Proficiency and Advance Call Center Training Program</h3>
-      <div class="school">Industrial Advancement Academy of the Philippines (IAAP)</div>
-      <p class="edu-location">Intramuros, Manila, Philippines</p>
-      <div class="edu-highlights"><span>English Proficiency</span><span>Professional Communication</span><span>Workplace Interaction</span></div>
-      <p class="edu-summary">Completed training in English communication, call center communication, and professional workplace interaction.</p>
-      <div class="edu-tags"><span>Training</span></div>
-    </article>
-    <article class="education-card reveal">
-      <div class="edu-date">Professional Strengths</div>
-      <h3>Core Competencies</h3>
-      <div class="edu-highlights"><span>Management &amp; Leadership</span><span>Creativity</span><span>Adaptability &amp; Flexibility</span><span>Problem Solving</span><span>Dependability</span><span>Strong Work Ethic</span><span>Communication &amp; Teamwork</span><span>Time Management</span></div>
-    </article>
-  </div>
+<div class="section-head reveal">
+<div class="eyebrow">Education &amp; Training</div>
+<h2>Education &amp; Professional Development</h2>
+</div>
+<div class="education-timeline">
+<article class="education-card reveal">
+<div class="edu-date">School Year 2018–2019</div>
+<h3>Associate in Computer Technology</h3>
+<div class="school">Bacolod City College</div>
+<p class="edu-location">Bacolod City, Negros Occidental, Philippines</p>
+<div class="edu-highlights"><span>Computer Technology</span><span>Technical Knowledge</span></div>
+<p class="edu-summary">Academic foundation in computer technology and technical concepts.</p>
+<div class="edu-tags"><span>Education</span></div>
+</article>
+<article class="education-card reveal">
+<div class="edu-date">2019 · 250 Hours</div>
+<h3>Sectoral Concerns &amp; Price Monitoring Unit</h3>
+<div class="school">CMO-PMU</div>
+<p class="edu-location">Office of the City Mayor — Bacolod City</p>
+<div class="edu-highlights"><span>Data Entry</span><span>Record Verification</span><span>Report Preparation</span><span>Documentation</span></div>
+<p class="edu-summary">Recorded and maintained price monitoring data, verified entries for accuracy, consolidated reports, and organized supporting records.</p>
+<div class="edu-tags"><span>Training</span><span>Spreadsheets &amp; Databases</span></div>
+</article>
+<article class="education-card reveal">
+<div class="edu-date">February 2017 · 112 Hours</div>
+<h3>English Proficiency and Advance Call Center Training Program</h3>
+<div class="school">Industrial Advancement Academy of the Philippines (IAAP)</div>
+<p class="edu-location">Intramuros, Manila, Philippines</p>
+<div class="edu-highlights"><span>English Proficiency</span><span>Professional Communication</span><span>Workplace Interaction</span></div>
+<p class="edu-summary">Completed training in English communication, call center communication, and professional workplace interaction.</p>
+<div class="edu-tags"><span>Training</span></div>
+</article>
+<article class="education-card reveal">
+<div class="edu-date">Professional Strengths</div>
+<h3>Core Competencies</h3>
+<div class="edu-highlights"><span>Management &amp; Leadership</span><span>Creativity</span><span>Adaptability &amp; Flexibility</span><span>Problem Solving</span><span>Dependability</span><span>Strong Work Ethic</span><span>Communication &amp; Teamwork</span><span>Time Management</span></div>
+</article>
+</div>
 </div>
 </section>
 <!-- TECHNICAL SKILLS -->
@@ -1344,29 +1459,29 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <section class="contact" id="contact">
 <div class="container">
 <div class="contact-box reveal">
-<div>
+<div class="contact-intro">
 <div class="eyebrow">Get In Touch</div>
 <h2>Let's work together.</h2>
 <p>I'm open to opportunities as a Virtual Assistant, including administrative support, data entry, customer service, e-commerce support, and order and inventory coordination.</p>
-<div class="avail"><span>🕘 Mon–Fri, Philippine Time (PHT)</span><span>⚡ Replies within 24 hours</span></div>
-<div class="contact-details">
+
+
+
+<div class="contact-info-panel"><h3>Contact Information</h3><div class="contact-details contact-details-readable">
 <div>📱 <a href="tel:+639168552232">+63 916 855 2232</a> <span style="color:inherit;opacity:.8">— Phone | WhatsApp | Telegram</span></div>
 <div>✉️ <a href="mailto:edwinpenacubajr@gmail.com">edwinpenacubajr@gmail.com</a></div>
 <div>📍 Bacolod City, Negros Occidental, Philippines</div>
-</div>
-<div class="social">
+</div><div class="avail"><span>🕘 Mon–Fri, Philippine Time (PHT)</span><span>⚡ Replies within 24 hours</span></div></div></div>
+
+<div class="contact-connect-panel"><h3>Connect With Me</h3><div class="contact-cta">
+<a class="btn btn-primary" href="mailto:edwinpenacubajr@gmail.com">Email Me →</a>
+<a class="btn btn-call" href="https://calendly.com/edwinpenacubajr" rel="noopener noreferrer" target="_blank">📅 Book a Call</a>
+</div><h4>Professional Profiles</h4><div class="social">
 <a href="https://wa.me/639168552232" rel="noopener noreferrer" target="_blank"><img alt="" class="brand-icon" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/whatsapp.svg"/>WhatsApp ↗</a>
 <a href="https://t.me/+639168552232" rel="noopener noreferrer" target="_blank"><img alt="" class="brand-icon" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/telegram.svg"/>Telegram ↗</a>
 <a href="https://www.linkedin.com/in/edwin-pe%C3%B1acuba-jr-8b45523b7/" rel="noopener noreferrer" target="_blank"><img alt="" class="brand-icon" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/linkedin.svg"/>LinkedIn ↗</a>
 <a href="https://v2.onlinejobs.ph/jobseekers/info/3358269" rel="noopener noreferrer" target="_blank"><img alt="" class="brand-icon brand-icon-original" loading="lazy" src="https://www.google.com/s2/favicons?domain=onlinejobs.ph&amp;sz=64"/>OnlineJobs.ph ↗</a>
 <a href="https://www.upwork.com/freelancers/~01068b085559722145" rel="noopener noreferrer" target="_blank"><img alt="" class="brand-icon" loading="lazy" src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/upwork.svg"/>Upwork ↗</a>
-</div>
-</div>
-<div class="contact-cta">
-<a class="btn btn-primary" href="mailto:edwinpenacubajr@gmail.com">Email Me →</a>
-<a class="btn btn-call" href="https://calendly.com/edwinpenacubajr" rel="noopener noreferrer" target="_blank">📅 Book a Call</a>
-</div>
-</div>
+</div></div></div>
 </div>
 </section>
 <footer>© 2026 Edwin Peñacuba Jr. • Operations &amp; Administrative Support</footer>
