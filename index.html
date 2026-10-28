@@ -932,6 +932,52 @@ code,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
 @media(max-width:800px){#experience .exp-highlights{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){#experience .experience{padding:18px!important}#experience .exp-highlights span{font-size:11px}#experience .experience .date{margin-bottom:10px}}
 </style>
+
+<style id="education-experience-matched-2026">
+/* Education now follows the same compact, full-width timeline language as Experience. */
+#education .education-timeline{display:grid;gap:22px;position:relative;padding-left:30px}
+#education .education-timeline::before{content:"";position:absolute;left:8px;top:12px;bottom:12px;width:2px;background:linear-gradient(#3b82f6,#7651f7);opacity:.8}
+#education .education-card{position:relative;display:block!important;height:auto!important;min-height:0!important;padding:22px 26px!important;border-radius:20px!important;overflow:hidden;isolation:isolate}
+#education .education-card::before{content:"";position:absolute;left:-29px;top:26px;width:11px;height:11px;border-radius:50%;background:#3479f6;box-shadow:0 0 0 5px rgba(59,130,246,.14)}
+#education .edu-date{display:inline-block;margin-bottom:12px;padding:9px 14px;border:1px solid rgba(96,165,250,.3);border-radius:100px;background:rgba(59,130,246,.12);color:#347af5;font-weight:700;font-size:12px}
+[data-theme="dark"] #education .edu-date{color:#9bc5ff}
+#education .education-card h3{margin:0!important;font-size:clamp(18px,2vw,22px)!important;line-height:1.35}
+#education .education-card .school{margin-top:6px;font-size:14px!important;font-weight:700;color:#3b82f6}
+#education .education-card .edu-location{margin:7px 0 0!important;font-size:13px!important;color:var(--muted)}
+#education .edu-highlights{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:16px}
+#education .edu-highlights span{display:flex;align-items:center;justify-content:center;min-height:39px;padding:8px 9px;text-align:center;border:1px solid rgba(59,130,246,.23);border-radius:9px;background:rgba(59,130,246,.065);color:var(--text);font-size:12px;font-weight:600;line-height:1.35}
+[data-theme="dark"] #education .edu-highlights span{background:rgba(37,99,235,.12);border-color:rgba(147,197,253,.22)}
+#education .education-card .edu-summary{font-size:13px!important;line-height:1.65!important;margin:13px 0 0!important;color:var(--muted)}
+#education .edu-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+#education .edu-tags span{padding:7px 10px;border-radius:9px;border:1px solid rgba(59,130,246,.25);background:rgba(59,130,246,.08);color:var(--text);font-size:11px;font-weight:600}
+@media(max-width:800px){#education .edu-highlights{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){#education .education-timeline{padding-left:22px;gap:14px}#education .education-timeline::before{left:5px}#education .education-card{padding:18px!important}#education .education-card::before{left:-22px}#education .edu-highlights span{font-size:11px}}
+</style>
+
+<style id="modern-crystal-stats-2026">
+/* Crystal-glass stats; existing dimensions, grid gaps, counters and network preserved. */
+.highlight-grid .highlight{
+  isolation:isolate;
+  background:linear-gradient(135deg,rgba(255,255,255,.82),rgba(226,237,255,.55) 55%,rgba(244,238,255,.72))!important;
+  border:1px solid rgba(104,151,234,.56)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.96),inset 0 -1px 0 rgba(255,255,255,.28),0 7px 22px rgba(35,67,129,.09);
+  backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.highlight-grid .highlight::before{height:2px;background:linear-gradient(90deg,#60a5fa,#8b5cf6,#67e8f9);transform:scaleX(1);opacity:.75}
+.highlight-grid .highlight::after{width:90px;height:90px;top:-48px;right:-32px;background:rgba(119,153,255,.17);filter:blur(22px)}
+.highlight-grid .highlight:hover{transform:translateY(-4px);border-color:rgba(79,112,241,.8)!important;box-shadow:inset 0 1px 0 #fff,0 12px 30px rgba(58,92,175,.17)}
+.highlight-grid .highlight-ico{background:linear-gradient(145deg,rgba(226,237,255,.95),rgba(227,218,255,.78))!important;border:1px solid rgba(134,161,234,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.highlight-grid .highlight-number{color:#4338ca!important;-webkit-text-fill-color:#4338ca!important}
+.highlight-grid .highlight p{color:#27364f!important;text-shadow:none!important}
+.highlight-grid .highlight.has-inner-network>.inner-network-lines{opacity:.23!important}
+[data-theme="dark"] .highlight-grid .highlight{background:linear-gradient(135deg,rgba(36,57,99,.82),rgba(23,34,66,.8) 55%,rgba(48,38,91,.72))!important;border-color:rgba(122,164,245,.48)!important;box-shadow:inset 0 1px 0 rgba(199,221,255,.17),0 8px 25px rgba(0,0,0,.18)}
+[data-theme="dark"] .highlight-grid .highlight-ico{background:linear-gradient(145deg,rgba(77,111,177,.56),rgba(89,67,157,.46))!important;border-color:rgba(153,186,255,.24)}
+[data-theme="dark"] .highlight-grid .highlight-number{color:#c4b5fd!important;-webkit-text-fill-color:#c4b5fd!important}
+[data-theme="dark"] .highlight-grid .highlight p{color:#f1f5ff!important}
+[data-theme="dark"] .highlight-grid .highlight.has-inner-network>.inner-network-lines{opacity:.32!important}
+@media(prefers-reduced-motion:reduce){.highlight-grid .highlight{transition:none}.highlight-grid .highlight:hover{transform:none}}
+</style>
 </head>
 <body>
 <div class="cursor-glow"></div>
@@ -1059,58 +1105,44 @@ I am comfortable working with computers, digital systems, spreadsheets, document
 <!-- EDUCATION & TRAINING -->
 <section class="education-section" id="education">
 <div class="container">
-<div class="section-head reveal">
-<div class="eyebrow">Education &amp; Training</div>
-<h2>Education &amp; Professional Development</h2>
-</div>
-<div class="education-grid">
-<div class="education-card reveal">
-<div class="education-icon">🎓</div><span class="edu-category">Education</span>
-<h3>Associate in Computer Technology</h3>
-<div class="school">Bacolod City College</div>
-<div class="date-small">School Year 2018–2019</div>
-<p>Bacolod City, Negros Occidental, Philippines</p><div class="edu-tags"><span>Computer Technology</span><span>Technical Knowledge</span></div>
-</div>
-<div class="education-card reveal">
-<div class="education-icon">📈</div><span class="edu-category">Training</span>
-<h3>Sectoral Concerns &amp; Price Monitoring Unit</h3>
-<div class="school">CMO-PMU</div>
-<div class="date-small">Office of the City Mayor — Bacolod City</div>
-<p>250 Hours • 2019</p>
-<ul class="training-list">
-<li>Accurately recorded, updated and maintained price monitoring and sectoral data using spreadsheets and databases.</li>
-<li>Verified reviewed data entries to ensure accuracy, completeness and consistency, and corrected missing information.</li>
-<li>Consolidated data and assisted in preparing reports, summaries and records while ensuring timely submission.</li>
-<li>Prepared and maintained proper file organization and documentation.</li>
-</ul>
-</div>
-<div class="education-card reveal">
-<div class="education-icon">🗣️</div><span class="edu-category">Training</span>
-<h3>English Proficiency and Advance Call Center Training Program</h3>
-<div class="school">Industrial Advancement Academy of the Philippines (IAAP)</div>
-<div class="date-small">112 Hours • February 2017</div>
-<p>Intramuros, Manila, Philippines</p>
-<ul class="training-list">
-<li>English communication and proficiency development.</li>
-<li>Customer service and call center communication training.</li>
-<li>Professional communication and workplace interaction.</li>
-</ul>
-</div>
-<div class="education-card reveal">
-<div class="education-icon">⭐</div><span class="edu-category">Strengths</span>
-<h3>Core Competencies</h3>
-<ul class="edu-competencies">
-<li>Management &amp; Leadership</li>
-<li>Creativity</li>
-<li>Adaptability &amp; Flexibility</li>
-<li>Problem Solving</li>
-<li>Dependability</li>
-<li>Strong Work Ethic</li>
-<li>Communication &amp; Teamwork</li>
-<li>Time Management</li>
-</ul>
-</div>
-</div>
+  <div class="section-head reveal">
+    <div class="eyebrow">Education &amp; Training</div>
+    <h2>Education &amp; Professional Development</h2>
+  </div>
+  <div class="education-timeline">
+    <article class="education-card reveal">
+      <div class="edu-date">School Year 2018–2019</div>
+      <h3>Associate in Computer Technology</h3>
+      <div class="school">Bacolod City College</div>
+      <p class="edu-location">Bacolod City, Negros Occidental, Philippines</p>
+      <div class="edu-highlights"><span>Computer Technology</span><span>Technical Knowledge</span></div>
+      <p class="edu-summary">Academic foundation in computer technology and technical concepts.</p>
+      <div class="edu-tags"><span>Education</span></div>
+    </article>
+    <article class="education-card reveal">
+      <div class="edu-date">2019 · 250 Hours</div>
+      <h3>Sectoral Concerns &amp; Price Monitoring Unit</h3>
+      <div class="school">CMO-PMU</div>
+      <p class="edu-location">Office of the City Mayor — Bacolod City</p>
+      <div class="edu-highlights"><span>Data Entry</span><span>Record Verification</span><span>Report Preparation</span><span>Documentation</span></div>
+      <p class="edu-summary">Recorded and maintained price monitoring data, verified entries for accuracy, consolidated reports, and organized supporting records.</p>
+      <div class="edu-tags"><span>Training</span><span>Spreadsheets &amp; Databases</span></div>
+    </article>
+    <article class="education-card reveal">
+      <div class="edu-date">February 2017 · 112 Hours</div>
+      <h3>English Proficiency and Advance Call Center Training Program</h3>
+      <div class="school">Industrial Advancement Academy of the Philippines (IAAP)</div>
+      <p class="edu-location">Intramuros, Manila, Philippines</p>
+      <div class="edu-highlights"><span>English Proficiency</span><span>Professional Communication</span><span>Workplace Interaction</span></div>
+      <p class="edu-summary">Completed training in English communication, call center communication, and professional workplace interaction.</p>
+      <div class="edu-tags"><span>Training</span></div>
+    </article>
+    <article class="education-card reveal">
+      <div class="edu-date">Professional Strengths</div>
+      <h3>Core Competencies</h3>
+      <div class="edu-highlights"><span>Management &amp; Leadership</span><span>Creativity</span><span>Adaptability &amp; Flexibility</span><span>Problem Solving</span><span>Dependability</span><span>Strong Work Ethic</span><span>Communication &amp; Teamwork</span><span>Time Management</span></div>
+    </article>
+  </div>
 </div>
 </section>
 <!-- TECHNICAL SKILLS -->
