@@ -1409,6 +1409,19 @@ html{scroll-padding-top:clamp(72px,9vh,105px)}
 }
 @media(max-width:360px){.hero h1{font-size:30px}.hero .buttons .btn{width:100%}}
 </style>
+<style id="skills-compact-responsive-2026">
+/* Technical Skills: compact cards, no title/status collisions, adaptive columns. */
+#about .skills{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;align-content:start!important;min-width:0!important;}
+#about .skill-item{min-width:0!important;min-height:112px!important;height:auto!important;padding:15px!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;gap:17px!important;}
+#about .skill-top{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:5px!important;width:100%!important;}
+#about .skill-top strong{display:flex!important;align-items:flex-start!important;gap:9px!important;min-width:0!important;font-size:clamp(12px,1vw,14px)!important;line-height:1.35!important;overflow-wrap:break-word!important;word-break:normal!important;}
+#about .skill-top .skill-ico{flex:0 0 30px!important;}
+#about .skill-top span[data-level]{display:block!important;align-self:flex-start!important;justify-self:start!important;margin-left:39px!important;padding:0!important;white-space:normal!important;text-align:left!important;font-size:12px!important;line-height:1.3!important;}
+#about .skill-bar{width:100%!important;margin-top:auto!important;flex:none!important;}
+@media(max-width:1100px){#about .skills{gap:11px!important}}
+@media(max-width:850px){#about .skills{grid-template-columns:repeat(2,minmax(0,1fr))!important}#about .skill-item{min-height:108px!important}}
+@media(max-width:520px){#about .skills{grid-template-columns:minmax(0,1fr)!important}#about .skill-item{min-height:98px!important;padding:14px!important}}
+</style>
 </head>
 <body>
 <div class="cursor-glow"></div>
